@@ -21,20 +21,9 @@
 			<div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;"></div>
 		</div>
 	</div>
-	<!--標題-->
-	<div class="container-fliud sticky-top" style="height: 10vh;">
-		<?php
-		$title = $Title->find(['sh' => 1]);
-		?>
-		<a class="" title="<?= $title['text']; ?>" href="index.php">
-			<div class="title" style="background:url(&#39;./img/<?= $title['img']; ?>&#39;);"></div>
-		</a>
-	</div>
-	<!--標題-->
-
 	<!-- navbar -->
 	<div class="container-fliud">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
 
 			<a class="navbar-brand" href="#">Navbar</a>
 			<div class="collapse navbar-collapse" id="navbarNav">
@@ -93,21 +82,32 @@
 	</div>
 	<!-- navbar -->
 
+	<!--標題-->
+	<div class="container" style="height: 18vh;">
+		<?php
+		$title = $Title->find(['sh' => 1]);
+		?>
+		<a class="" title="<?= $title['text']; ?>" href="index.php">
+			<div class="title" style="background:url(&#39;./img/<?= $title['img']; ?>&#39;); background-size:cover;"></div>
+		</a>
+	</div>
+	<!--標題-->
+
+
 	<div class="container">
 
 
 		<!-- main -->
-		<div class="main">
-			<?php
-			$do = $_GET['do'] ?? 'main';
-			$file = "./front/{$do}.php";
-			if (file_exists($file)) {
-				include $file;
-			} else {
-				include "./front/main.php";
-			}
-			?>
-		</div>
+		<?php
+		$do = $_GET['do'] ?? 'main';
+		$file = "./front/{$do}.php";
+		if (file_exists($file)) {
+			include $file;
+		} else {
+			include "./front/main.php";
+		}
+		?>
+
 		<!-- main -->
 
 
@@ -164,70 +164,23 @@
 		</div>
 		<!-- 進站總人數 -->
 
-
-		<div class="container">
-			<div class="row">
-				<?php
-				$imgs = $Image->all(['sh' => 1]);
-
-				for ($i = 0; $i < count($imgs); $i++) {
-					// 显示每4张图片为一组，创建一个card列
-					if ($i % 4 == 0) {
-						echo '<div class="col-3 mb-3">';
-						echo '<div class="card-deck">';
-					}
-				?>
-					<div class="card">
-						<img src="./img/<?= $imgs[$i]['img']; ?>" class="card-img-top" alt="">
-						<!-- 如果有需要可以添加其他卡片内容 -->
-					</div>
-				<?php
-					// 每组显示4张图片，闭合card列
-					if ($i % 4 == 3 || $i == count($imgs) - 1) {
-						echo '</div>';
-						echo '</div>';
-					}
-				}
-				?>
-			</div>
-			<div class="row mt-3">
-				<div class="col">
-					<button class="btn btn-primary" onclick="move('left')">上移</button>
-				</div>
-				<div class="col text-end">
-					<button class="btn btn-primary" onclick="move('right')">下移</button>
+		<div class="row row-cols-1 row-cols-md-2 g-4">
+			<div class="col">
+				<div class="card">
+					<img src="..." class="card-img-top" alt="...">
+					
 				</div>
 			</div>
+
+
 		</div>
-
-		<script>
-			var currentPosition = 0; // 当前显示的照片位置
-
-			function move(direction) {
-				var cards = document.querySelectorAll('.card-deck');
-				var numCards = cards.length;
-
-				if (direction === 'left' && currentPosition > 0) {
-					cards[currentPosition].classList.add('d-none');
-					currentPosition--;
-					cards[currentPosition].classList.remove('d-none');
-				} else if (direction === 'right' && currentPosition < numCards - 1) {
-					cards[currentPosition].classList.add('d-none');
-					currentPosition++;
-					cards[currentPosition].classList.remove('d-none');
-				}
-			}
-		</script>
-
-
-	</div>
-	<!-- footer -->
-	<div class="bg-secondary">
-		<p class="text-center mt-2 bg-light">
-			<i class="fa-solid fa-copyright"></i><?= $Bottom->find(1)['bottom']; ?>
-		</p>
-	</div>
-	<!-- footer end -->
+		<!-- footer -->
+		<div class="bg-secondary">
+			<p class="text-center mt-2 bg-light">
+				<i class="fa-solid fa-copyright"></i><?= $Bottom->find(1)['bottom']; ?>
+			</p>
+		</div>
+		<!-- footer end -->
 
 </body>
 
