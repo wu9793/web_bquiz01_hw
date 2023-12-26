@@ -44,12 +44,12 @@ body
 	border:#EE7728 1px solid;
 	position:relative;
 }
-.title
+.bg-img
 {
 	width:100%;
 	height:100%;
-	position:relative;
-	/* background-size:cover; */
+	background-color: #999;
+	background-size:cover;
 	background-repeat:no-repeat;
 	background-position: center center;
 }

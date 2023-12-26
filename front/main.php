@@ -13,23 +13,23 @@
 
 
     <?php include_once "marquee.php"; ?>
-    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-            //<?php
-                //$lins = $Mvim->all(['sh' => 1]);
-                //foreach ($lins as $index => $lin) {
-                //    $active = ($index === 0) ? 'active' : ''; // 判斷是否為第一張圖片，設定 active class
-                //    echo "<div class='carousel-item $active' data-bs-interval='3000'>";
-                //    echo "<img class='d-block w-100 rounded-4' src='./img/{$lin['img']}' alt=''>";
-                //    echo "</div>";
-                //}
-                //
-                ?>
+            <?php
+            $lins = $Mvim->all(['sh' => 1]);
+            foreach ($lins as $index => $lin) {
+                $active = ($index === 0) ? 'active' : ''; // 判斷是否為第一張圖片，設定 active class
+                echo "<div class='carousel-item $active' data-bs-interval='3000'>";
+                echo "<img class='d-block w-100 rounded-4' style='height:60vh;' src='./img/{$lin['img']}' alt=''>";
+                echo "</div>";
+            }
+
+            ?>
         </div>
         <button class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -39,11 +39,11 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </button>
-    </div> -->
+    </div>
 
 
     <!--正中央-->
-    <div style="width:100%; padding:2px; height:40vh;">
+    <!-- <div style="width:100%; padding:2px; height:40vh;">
         <div id="mwww" loop="true" style="width:100%; height:100%;">
             <div style="width:99%; height:100%; position:relative;" class="cent">
                 沒有資料
@@ -52,12 +52,13 @@
     </div>
     <script>
         var lin = new Array();
-        <?php
-        $lins = $Mvim->all(['sh' => 1]);
-        foreach ($lins as $lin) {
-            echo "lin.push('{$lin['img']}');";
-        }
-        ?>
+        //<?php
+            //$lins = $Mvim->all(['sh' => 1]);
+            //foreach ($lins as $lin) {
+            //    echo "lin.push('{$lin['img']}');";
+            //}
+            //
+            ?>
 
         var now = 0;
         ww();
@@ -72,8 +73,42 @@
             now++;
             if (now >= lin.length)
                 now = 0;
-        }
-    </script>
+        } 
+    </script>-->
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <!-- list group -->
+    <div class="list-group mt-3">
+        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">List group item heading</h5>
+                <small>3 days ago</small>
+            </div>
+            <p class="mb-1">Some placeholder content in a paragraph.</p>
+            <small>And some small print.</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">List group item heading</h5>
+                <small class="text-body-secondary">3 days ago</small>
+            </div>
+            <p class="mb-1">Some placeholder content in a paragraph.</p>
+            <small class="text-body-secondary">And some muted small print.</small>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">List group item heading</h5>
+                <small class="text-body-secondary">3 days ago</small>
+            </div>
+            <p class="mb-1">Some placeholder content in a paragraph.</p>
+            <small class="text-body-secondary">And some muted small print.</small>
+        </a>
+    </div>
+    <!-- list group -->
+
 
 
     <div style="width:95%; padding:2px; height:190px; margin-top:10px; padding:5px 10px 5px 10px; border:#0C3 dashed 3px; position:relative;">

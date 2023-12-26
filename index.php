@@ -83,12 +83,12 @@
 	<!-- navbar -->
 
 	<!--標題-->
-	<div class="container" style="height: 18vh;">
+	<div class="container" style="height: 12vh;">
 		<?php
 		$title = $Title->find(['sh' => 1]);
 		?>
 		<a class="" title="<?= $title['text']; ?>" href="index.php">
-			<div class="title" style="background:url(&#39;./img/<?= $title['img']; ?>&#39;); background-size:cover;"></div>
+			<div class="bg-img" style="background-image:url(&#39;./img/<?= $title['img']; ?>&#39;);"></div>
 		</a>
 	</div>
 	<!--標題-->
