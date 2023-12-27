@@ -1,23 +1,34 @@
 <?php
-if(isset($_SESSION['login'])){
+if (isset($_SESSION['login'])) {
 	to("back.php");
 }
 
 
 if (isset($_GET['error'])) {
 	echo "<script>alert('{$_GET['error']}')</script>";
-
 }
 
 ?>
-<div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
-	<?php include_once "marquee.php"; ?>
-	<div style="height:32px; display:block;"></div>
-	<!--正中央-->
-	<form method="post" action="./api/check.php">
-		<p class="t botli">管理員登入區</p>
-		<p class="cent">帳號 ： <input name="acc" autofocus="" type="text"></p>
-		<p class="cent">密碼 ： <input name="pw" type="password"></p>
-		<p class="cent"><input value="送出" type="submit"><input type="reset" value="清除"></p>
-	</form>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="staticBackdropLabel">管理員登入區</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form method="post" action="./api/check.php">
+					<label for="exampleFormControlInput1" class="form-label">帳號</label>
+					<input class="form-control" name="acc" autofocus="" type="text">
+					<label for="exampleFormControlInput1" class="form-label">密碼</label>
+					<input class="form-control" name="pw" type="password">
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary mb-3 d-grid">Sign in</button>
+			</div>
+		</div>
+	</div>
 </div>

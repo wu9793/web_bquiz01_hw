@@ -28,10 +28,6 @@
 			<a class="navbar-brand" href="#">Navbar</a>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
-					<!-- <li class="nav-item">
-						<a class="nav-link" href="#">Features</a>
-					</li> -->
-
 					<?php
 					$mainmu = $Menu->all(['sh' => 1, 'menu_id' => 0]);
 					foreach ($mainmu as $main) {
@@ -67,14 +63,48 @@
 				<?php
 				if (isset($_SESSION['login'])) {
 				?>
-					<button class="btn btn-outline-success" type="submit" onclick="lo('back.php')">返回管理</button>
+					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="lo('back.php')">返回管理</button>
 				<?php
 				} else {
 				?>
-					<button class="btn btn-outline-success" type="submit" onclick="lo('?do=login')">管理登入</button>
+					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">管理登入</button>
 				<?php
 				}
 				?>
+			</div>
+			<?php
+			if (isset($_SESSION['login'])) {
+				to("back.php");
+			}
+
+
+			if (isset($_GET['error'])) {
+				echo "<script>alert('{$_GET['error']}')</script>";
+			}
+
+			?>
+
+			<!-- Modal -->
+			<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="staticBackdropLabel">管理員登入區</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<form method="post" action="./api/check.php">
+								<label for="exampleFormControlInput1" class="form-label">帳號</label>
+								<input class="form-control" name="acc" autofocus="" type="text">
+								<label for="exampleFormControlInput1" class="form-label">密碼</label>
+								<input class="form-control" name="pw" type="password">
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary mb-3 d-grid">Sign in</button>
+						</div>
+					</div>
+				</div>
 			</div>
 			<!-- 管理登入 -->
 
@@ -168,7 +198,7 @@
 			<div class="col">
 				<div class="card">
 					<img src="..." class="card-img-top" alt="...">
-					
+
 				</div>
 			</div>
 
