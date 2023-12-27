@@ -9,23 +9,24 @@
 	<link href="./css/css.css" rel="stylesheet" type="text/css">
 	<script src="./js/jquery-1.9.1.min.js"></script>
 	<script src="./js/js.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Bootstrap JavaScript 和 jQuery（下拉式選單所需） -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
-	<div id="cover" style="display:none; ">
-		<div id="coverr">
-			<a style="position:absolute; right:3px; top:4px; cursor:pointer; z-index:9999;" onclick="cl('#cover')">X</a>
-			<div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;"></div>
-		</div>
-	</div>
 	<!-- navbar -->
 	<div class="container-fliud">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
-
-			<a class="navbar-brand" href="#">Navbar</a>
+			<a class="navbar-brand" href="#">卓越科技大學</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<?php
@@ -33,14 +34,14 @@
 					foreach ($mainmu as $main) {
 					?>
 						<li class="nav-item dropdown">
-							<a href="<?= $main['href']; ?>" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<a href="<?= $main['href']; ?>" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								<?= $main['text']; ?>
 							</a>
 
 							<?php
 							if ($Menu->count(['menu_id' => $main['id']]) > 0) {
 								$subs = $Menu->all(['menu_id' => $main['id']]);
-								echo "<ul class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink' style='list-style-type: none; padding-left: 0;'>";
+								echo "<ul class='dropdown-menu' aria-labelledby='navbarDropdown' style=' padding-left: 0;'>";
 								foreach ($subs as $sub) {
 									echo "<li>";
 									echo "<a class='dropdown-item' href='{$sub['href']}'>";
@@ -59,6 +60,17 @@
 				</ul>
 			</div>
 			<!-- 管理登入 -->
+				<?php
+				if (isset($_SESSION['login'])) {
+					to("back.php");
+				}
+	
+	
+				if (isset($_GET['error'])) {
+					echo "<script>alert('{$_GET['error']}')</script>";
+				}
+	
+				?>
 			<div class="d-flex">
 				<?php
 				if (isset($_SESSION['login'])) {
@@ -72,17 +84,6 @@
 				}
 				?>
 			</div>
-			<?php
-			if (isset($_SESSION['login'])) {
-				to("back.php");
-			}
-
-
-			if (isset($_GET['error'])) {
-				echo "<script>alert('{$_GET['error']}')</script>";
-			}
-
-			?>
 
 			<!-- Modal -->
 			<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -92,16 +93,34 @@
 							<h5 class="modal-title" id="staticBackdropLabel">管理員登入區</h5>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
-						<div class="modal-body">
-							<form method="post" action="./api/check.php">
-								<label for="exampleFormControlInput1" class="form-label">帳號</label>
-								<input class="form-control" name="acc" autofocus="" type="text">
-								<label for="exampleFormControlInput1" class="form-label">密碼</label>
-								<input class="form-control" name="pw" type="password">
+						<div class="modal-body mt-3">
+							<form method="post" class="signin-form" action="./api/check.php">
+								<div class="form-group  col-6 mx-auto">
+									<!-- <label class="label" for="acc">帳號</label> -->
+									<input class="form-control rounded-5 w-100" name="acc" placeholder="帳號" type="text">
+								</div>
+								<div class="form-group col-6 mx-auto">
+									<!-- <label class="label" for="pw">密碼</label> -->
+									<input class="form-control rounded-5  w-100" name="pw" type="password" placeholder="密碼">
+								</div>
+								<div class="form-group col-6 mx-auto">									
+									<button type="submit" value="送出" class="form-control btn btn-primary rounded-5 mb-3">Sign in</button>
+								</div>
 							</form>
 						</div>
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary mb-3 d-grid">Sign in</button>
+						<div class="modal-footer row text-center">
+
+								<div class="col">
+									<label class="check-wrap check-primary">
+										<input type="checkbox" checked>
+										<span class="checkmark"></span>
+										Remember Me
+									</label>
+								</div>
+								<div class="col">
+									<a href="#">Forget Password</a>
+								</div>
+							
 						</div>
 					</div>
 				</div>
