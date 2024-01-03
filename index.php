@@ -213,24 +213,14 @@
 		</div>
 		<!-- 進站總人數 -->
 
-		<div class="row row-cols-1 row-cols-md-2 g-4">
-			<div class="col">
-				<div class="card">
-					<img src="..." class="card-img-top" alt="...">
-
-				</div>
-			</div>
-
-
-		</div>
-		<!-- footer -->
-		<div class="bg-secondary">
-			<p class="text-center mt-2 bg-light">
-				<i class="fa-solid fa-copyright"></i><?= $Bottom->find(1)['bottom']; ?>
-			</p>
-		</div>
-		<!-- footer end -->
-
+	</div>
+	<!-- footer -->
+	<div class="footer">
+		<p class="">
+			<i class="fa-solid fa-copyright"></i><?= $Bottom->find(1)['bottom']; ?>
+		</p>
+	</div>
+	<!-- footer end -->
 </body>
 
 </html>
