@@ -145,7 +145,6 @@
 
 	<div class="container">
 
-
 		<!-- main -->
 		<?php
 		$do = $_GET['do'] ?? 'main';
@@ -156,58 +155,63 @@
 			include "./front/main.php";
 		}
 		?>
-
 		<!-- main -->
-
-
+		<br>
+		<hr>
+		<br>
 		<!-- 校園映象區 -->
-		<div class="">
-			<h3 class="">校園映象區</h3>
-			<div class="row">
-				<div class="col" onclick="pp(1)"><img src="./icon/up.jpg" alt=""></div>
-				<div class="col">
-					<?php
-					$imgs = $Image->all(['sh' => 1]);
-
-					foreach ($imgs as $idx => $img) {
-					?>
-						<div id="ssaa<?= $idx; ?>">
-							<img src="./img/<?= $img['img']; ?>" style="width:150px;height:103px;border:3px solid orange;margin:3px">
-						</div>
-					<?php
-					}
-					?>
+		<h3 class="">校園映象區</h3>
+		<div class="card-group row">
+			<div class="card col">
+				<img src="..." class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 				</div>
-				<div class="col" onclick="pp(2)"><img src="./icon/dn.jpg" alt=""></div>
-				<script>
-					var nowpage = 1,
-						num = <?= $Image->count(['sh' => 1]); ?>;
+			</div>
+			<div class="card col">
+				<img src="..." class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card col">
+				<img src="..." class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			<div class="card col">
+				<img src="..." class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+			
+		</div>
+		<div class="row">
+			<div class="col">
+				<?php
+				$imgs = $Image->all(['sh' => 1], ' limit 3');
 
-					function pp(x) {
-						var s, t;
-						if (x == 1 && nowpage - 1 >= 0) {
-							nowpage--;
-						}
-						if (x == 2 && (nowpage + 1) <= num * 1 - 3) {
-							nowpage++;
-						}
-
-						$(".im").hide()
-						for (s = 0; s <= 2; s++) {
-							t = s * 1 + nowpage * 1;
-							$("#ssaa" + t).show()
-
-						}
-					}
-
-
-					pp(2)
-				</script>
+				foreach ($imgs as $idx => $img) {
+				?>
+					<div id="ssaa<?= $idx; ?>">
+						<img src="./img/<?= $img['img']; ?>">
+					</div>
+				<?php
+				}
+				?>
 			</div>
 		</div>
 		<!-- 校園映象區 -->
-
-
 		<br>
 		<hr>
 		<br>
