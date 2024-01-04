@@ -186,8 +186,35 @@ a:hover{
 }
 
 .footer{
+	padding: 50px;
+}
+
+.footer-header{
+	font-size: 20px;
+}
+p > a{
+	text-decoration: none;
+	color: black;
+}
+p > a:hover{
+	text-decoration: none;
+	color: #ccc;
+}
+.icon > a{
+	text-decoration: none;
+}
+.icon > a:hover{
+	text-decoration: none;
+}
+
+.copyright{
 	height: 10vh;
 	width: 100%;
 	background-color: black;
+	padding-top: 50px;
+	color: #ffffff;
+}
+.copyright > p{
 	text-align: center;
+	margin: auto;
 }
