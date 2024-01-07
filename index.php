@@ -162,59 +162,32 @@
 		<!-- 校園映象區 -->
 		<h3 class="">校園映象區</h3>
 		<div class="card-group row">
-			<div class="card col">
-				<img src="..." class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-			<div class="card col">
-				<img src="..." class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-			<div class="card col">
-				<img src="..." class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-			<div class="card col">
-				<img src="..." class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-			
-		</div>
-		<div class="row">
-			<div class="col">
+
 				<?php
 				$imgs = $Image->all(['sh' => 1], ' limit 3');
 
 				foreach ($imgs as $idx => $img) {
 				?>
-					<div id="ssaa<?= $idx; ?>">
-						<img src="./img/<?= $img['img']; ?>">
+					<div id="ssaa<?= $idx; ?>" class="card col d-flex p-2 pb-0 rounded-4 border-0" >
+						<img src="./img/<?= $img['img']; ?>" class="card-img-top rounded-4 card-img">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+						</div>
 					</div>
 				<?php
 				}
 				?>
-			</div>
+
 		</div>
-		<!-- 校園映象區 -->
-		<br>
-		<hr>
-		<br>
+
+
+	</div>
+	<!-- 校園映象區 -->
+	<br>
+	<hr>
+	<br>
 	</div>
 	<div class="container-fluid">
 		<div class="container footer">
