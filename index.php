@@ -163,12 +163,13 @@
 		<h3 class="">校園映象區</h3>
 		<div class="card-group row">
 
-				<?php
-				$imgs = $Image->all(['sh' => 1], ' limit 3');
+			<?php
+			$imgs = $Image->all(['sh' => 1]);
 
-				foreach ($imgs as $idx => $img) {
-				?>
-					<div id="ssaa<?= $idx; ?>" class="card col d-flex p-2 pb-0 rounded-4 border-0" >
+			foreach ($imgs as $idx => $img) {
+			?>
+				<div class="col-4">
+					<div id="ssaa<?= $idx; ?>" class="card d-flex p-2 pb-0 rounded-4 border-0">
 						<img src="./img/<?= $img['img']; ?>" class="card-img-top rounded-4 card-img">
 						<div class="card-body">
 							<h5 class="card-title">Card title</h5>
@@ -176,9 +177,10 @@
 							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 						</div>
 					</div>
-				<?php
-				}
-				?>
+				</div>
+			<?php
+			}
+			?>
 
 		</div>
 
@@ -205,8 +207,8 @@
 				</div>
 				<div class="col">
 					<!-- 進站總人數 -->
-					<div class="border border-secondary mx-auto">
-						<span class="t">進站總人數 : <?= $Total->find(1)['total']; ?></span>
+					<div class="border border-secondary mx-auto text-center">
+						<span>進站總人數 : <?= $Total->find(1)['total']; ?></span>
 					</div>
 					<!-- 進站總人數 -->
 					<br>
@@ -245,7 +247,6 @@
 	<!-- footer -->
 	<div class="copyright">
 		<p class="">
-
 			Copyright&nbsp;<i class="fa-solid fa-copyright mx-2"></i><?= $Bottom->find(1)['bottom']; ?>&nbsp;|&nbsp;All Rights Reserved
 		</p>
 	</div>
