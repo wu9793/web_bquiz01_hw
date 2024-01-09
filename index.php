@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>卓越科技大學校園資訊系統</title>
+	<title>HAMBURGER</title>
 	<link href="./css/css.css" rel="stylesheet" type="text/css">
 	<script src="./js/jquery-1.9.1.min.js"></script>
 	<script src="./js/js.js"></script>
@@ -22,56 +22,21 @@
 <body>
 	<!-- navbar -->
 	<div class="container-fliud">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
-			<a class="navbar-brand" href="#">卓越科技大學</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<?php
-					$mainmu = $Menu->all(['sh' => 1, 'menu_id' => 0]);
-					foreach ($mainmu as $main) {
-					?>
-						<li class="nav-item dropdown">
-							<a href="<?= $main['href']; ?>" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								<?= $main['text']; ?>
-							</a>
-
-							<?php
-							if ($Menu->count(['menu_id' => $main['id']]) > 0) {
-								$subs = $Menu->all(['menu_id' => $main['id']]);
-								echo "<ul class='dropdown-menu' aria-labelledby='navbarDropdown' style=' padding-left: 0;'>";
-								foreach ($subs as $sub) {
-									echo "<li>";
-									echo "<a class='dropdown-item' href='{$sub['href']}'>";
-									echo $sub['text'];
-									echo "</a>";
-									echo "</li>";
-								}
-							}
-							echo "</ul>";
-							?>
-						</li>
-
-					<?php
-					}
-					?>
-				</ul>
-			</div>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light px-4 d-flex">
+			<a class="navbar-brand" href="index.php">
+				<i class="fa-solid fa-burger"></i>&nbsp;HAMBURGER
+			</a>
 			<!-- 管理登入 -->
-			<?php
-			if (isset($_SESSION['login'])) {
-				to("back.php");
-			}
+			<div class="" style="margin-left:1500px;">
+				<?php
+				if (isset($_SESSION['login'])) {
+					to("back.php");
+				}
+				if (isset($_GET['error'])) {
+					echo "<script>alert('{$_GET['error']}')</script>";
+				}
 
-
-			if (isset($_GET['error'])) {
-				echo "<script>alert('{$_GET['error']}')</script>";
-			}
-
-			?>
-			<div class="d-flex">
+				?>
 				<?php
 				if (isset($_SESSION['login'])) {
 				?>
@@ -79,67 +44,33 @@
 				<?php
 				} else {
 				?>
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">管理登入</button>
+					<button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#login">
+						<i class="fa-solid fa-user"></i>
+					</button>
 				<?php
 				}
 				?>
+				<!-- 管理登入 -->
+				<button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#shop">
+					<i class="fa-solid fa-bag-shopping"></i>
+				</button>
+				<button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu">
+					<i class="fa-solid fa-list-ul"></i>
+				</button>
 			</div>
-
-			<!-- Modal -->
-			<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="staticBackdropLabel">管理員登入區</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body mt-3">
-							<form method="post" class="signin-form" action="./api/check.php">
-								<div class="form-group  col-6 mx-auto">
-									<!-- <label class="label" for="acc">帳號</label> -->
-									<input class="form-control rounded-5 w-100" name="acc" placeholder="帳號" type="text">
-								</div>
-								<div class="form-group col-6 mx-auto">
-									<!-- <label class="label" for="pw">密碼</label> -->
-									<input class="form-control rounded-5  w-100" name="pw" type="password" placeholder="密碼">
-								</div>
-								<div class="form-group col-6 mx-auto">
-									<button type="submit" value="送出" class="form-control btn btn-primary rounded-5 mb-3">Sign in</button>
-								</div>
-							</form>
-						</div>
-						<div class="modal-footer row text-center">
-
-							<div class="col">
-								<label class="check-wrap check-primary">
-									<input type="checkbox" checked>
-									<span class="checkmark"></span>
-									Remember Me
-								</label>
-							</div>
-							<div class="col">
-								<a href="#">Forget Password</a>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- 管理登入 -->
-
 		</nav>
 	</div>
 	<!-- navbar -->
 
 	<!--標題-->
-	<div class="container" style="height: 12vh;">
+	<!-- <div class="container" style="height: 12vh;">
 		<?php
 		$title = $Title->find(['sh' => 1]);
 		?>
 		<a class="" title="<?= $title['text']; ?>" href="index.php">
 			<div class="bg-img" style="background-image:url(&#39;./img/<?= $title['img']; ?>&#39;);"></div>
 		</a>
-	</div>
+	</div> -->
 	<!--標題-->
 
 
@@ -156,33 +87,6 @@
 		}
 		?>
 		<!-- main -->
-		<br>
-		<hr>
-		<br>
-		<!-- 校園映象區 -->
-		<h3 class="">校園映象區</h3>
-		<div class="card-group row">
-
-			<?php
-			$imgs = $Image->all(['sh' => 1]);
-
-			foreach ($imgs as $idx => $img) {
-			?>
-				<div class="col-4">
-					<div id="ssaa<?= $idx; ?>" class="card d-flex p-2 pb-0 rounded-4 border-0">
-						<img src="./img/<?= $img['img']; ?>" class="card-img-top rounded-4 card-img">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					</div>
-				</div>
-			<?php
-			}
-			?>
-
-		</div>
 
 
 	</div>
@@ -251,6 +155,85 @@
 		</p>
 	</div>
 	<!-- footer end -->
+	<!-- menu邊選單 -->
+	<!-- <div class="offcanvas offcanvas-end" id="menu">
+		<div class="offcanvas-header">
+			<h2 class="fw-bold mb-5 text-center mt-5"></h2>
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+		</div>
+		<div class="offcanvas-body">
+			<div class="list-group list-group-flush">
+				<?php
+				$mainmu = $Menu->all(['sh' => 1, 'menu_id' => 0]);
+				foreach ($mainmu as $main) {
+				?>
+					<a href="<?= $main['href']; ?>" class="list-group-item list-group-item-action">
+						<?= $main['text']; ?>
+					</a>
+				<?php
+				}
+				?>
+
+			</div>
+		</div>
+		<!-- 邊選單 end -->
+
+	<!-- </div> -->
+	<div class="offcanvas offcanvas-end" id="login">
+		<div class="offcanvas-header">
+			<h2 class="fw-bold mb-5 text-center mt-5">會員登入</h2>
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+		</div>
+		<div class="offcanvas-body">
+			<form method="post" class="signin-form" action="./api/check.php">
+				<div class="container">
+					<div class="form-group mx-auto">
+						<div class="row mt-3">
+							<div class="col">
+								<label class="label" for="acc">帳號</label>
+								<input class="form-control w-100" name="acc" placeholder="帳號" type="text">
+							</div>
+						</div>
+
+						<div class="row mt-3">
+							<div class="col">
+								<label class="label" for="pw">密碼</label>
+								<input class="form-control  w-100" name="pw" type="password" placeholder="密碼">
+
+							</div>
+						</div>
+
+						<div class="row mt-3">
+							<div class="col-12">
+								<button type="submit" class="form-control btn btn-dark btn-block">
+									登入
+								</button>
+							</div>
+							<div class="col-12 pt-2">
+								<button type="submit" class="form-control btn border btn-light btn-block mb-4">
+									加入會員
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- 邊選單 end -->
+
+	</div>
+	<div class="offcanvas offcanvas-end" id="shop">
+		<div class="offcanvas-header">
+			<h2 class="fw-bold mb-5 text-center mt-5">購物車</h2>
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+		</div>
+		<div class="offcanvas-body">
+
+		</div>
+		<!-- 邊選單 end -->
+
+	</div>
+
 </body>
 
 </html>
