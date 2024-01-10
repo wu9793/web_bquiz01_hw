@@ -1,5 +1,5 @@
 ﻿<?php include_once "./api/db.php";
-if(!isset($_SESSION['login'])){
+if(!isset($_SESSION['user'])){
 	to("index.php");
 }
 ?>

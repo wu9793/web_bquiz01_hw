@@ -16,6 +16,7 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -44,17 +45,17 @@
 				<?php
 				} else {
 				?>
-					<button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#login">
+					<button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#side-login">
 						<i class="fa-solid fa-user"></i>
 					</button>
 				<?php
 				}
 				?>
 				<!-- 管理登入 -->
-				<button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#shop">
+				<button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#side-shop">
 					<i class="fa-solid fa-bag-shopping"></i>
 				</button>
-				<button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu">
+				<button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#side-menu">
 					<i class="fa-solid fa-list-ul"></i>
 				</button>
 			</div>
@@ -72,7 +73,6 @@
 		</a>
 	</div> -->
 	<!--標題-->
-
 
 	<div class="container">
 
@@ -156,7 +156,7 @@
 	</div>
 	<!-- footer end -->
 	<!-- menu邊選單 -->
-	<!-- <div class="offcanvas offcanvas-end" id="menu">
+	<div class="offcanvas offcanvas-end" id="side-menu">
 		<div class="offcanvas-header">
 			<h2 class="fw-bold mb-5 text-center mt-5"></h2>
 			<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
@@ -178,51 +178,83 @@
 		</div>
 		<!-- 邊選單 end -->
 
-	<!-- </div> -->
-	<div class="offcanvas offcanvas-end" id="login">
-		<div class="offcanvas-header">
-			<h2 class="fw-bold mb-5 text-center mt-5">會員登入</h2>
-			<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-		</div>
-		<div class="offcanvas-body">
-			<form method="post" class="signin-form" action="./api/check.php">
+	</div>
+	<div class="offcanvas offcanvas-end" id="side-login">
+
+		<?php
+		if (!isset($_SESSION['user'])) {
+		?>
+			<div class="offcanvas-header">
+				<h2 class="fw-bold mb-5 text-center mt-5">會員登入</h2>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+			</div>
+			<div class="offcanvas-body">
 				<div class="container">
 					<div class="form-group mx-auto">
 						<div class="row mt-3">
 							<div class="col">
 								<label class="label" for="acc">帳號</label>
-								<input class="form-control w-100" name="acc" placeholder="帳號" type="text">
+								<input class="form-control w-100" id="acc" name="acc" placeholder="帳號" type="text">
 							</div>
 						</div>
 
 						<div class="row mt-3">
 							<div class="col">
 								<label class="label" for="pw">密碼</label>
-								<input class="form-control  w-100" name="pw" type="password" placeholder="密碼">
+								<input class="form-control  w-100" id="pw" name="pw" type="password" placeholder="密碼">
 
 							</div>
 						</div>
 
 						<div class="row mt-3">
 							<div class="col-12">
-								<button type="submit" class="form-control btn btn-dark btn-block">
+								<button type="submit" class="form-control btn btn-dark btn-block" onclick="login()">
 									登入
 								</button>
 							</div>
 							<div class="col-12 pt-2">
-								<button type="submit" class="form-control btn border btn-light btn-block mb-4">
-									加入會員
-								</button>
+								<a href="?do=reg">
+									<button type="submit" class="form-control btn border btn-light btn-block mb-4">
+										加入會員
+									</button>
+								</a>
 							</div>
 						</div>
 					</div>
 				</div>
-			</form>
-		</div>
-		<!-- 邊選單 end -->
+			</div>
+		<?php
+		} else {
+		?>
+			<div class="offcanvas-header">
+				<h3 class="fw-bold mb-5 text-center mt-5">
+					歡迎,<?= $_SESSION['user']; ?>
+				</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+			</div>
+			<div class="offcanvas-body">
+				<div class="container">
+					<div class="mx-auto">
+						<div class="row mt-3">
+							<div class="col-12">
+								<button class="btn btn btn-dark btn-block" onclick="location.href='./api/logout.php'">登出</button>
+								<?php
+								if ($_SESSION['user'] == 'admin') {
+								?>
+									<button class="btn btn btn-dark btn-block" onclick="location.href='back.php'">管理</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	<?php
+								}
+							}
+	?>
+	<!-- 邊選單 end -->
 
 	</div>
-	<div class="offcanvas offcanvas-end" id="shop">
+	<div class="offcanvas offcanvas-end" id="side-shop">
 		<div class="offcanvas-header">
 			<h2 class="fw-bold mb-5 text-center mt-5">購物車</h2>
 			<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
