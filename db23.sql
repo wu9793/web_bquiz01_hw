@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-12-21 09:35:41
+-- 產生時間： 2024-01-10 09:35:15
 -- 伺服器版本： 10.4.28-MariaDB
 -- PHP 版本： 8.2.4
 
@@ -49,15 +49,20 @@ INSERT INTO `ad` (`id`, `text`, `sh`) VALUES
 CREATE TABLE `admin` (
   `id` int(10) UNSIGNED NOT NULL,
   `acc` text NOT NULL,
-  `pw` text NOT NULL
+  `pw` text NOT NULL,
+  `name` text NOT NULL,
+  `email` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `admin`
 --
 
-INSERT INTO `admin` (`id`, `acc`, `pw`) VALUES
-(3, 'admin', '1234');
+INSERT INTO `admin` (`id`, `acc`, `pw`, `name`, `email`) VALUES
+(3, 'admin', '1234', '', ''),
+(4, '1234@gmail.com', '6666', '', ''),
+(5, '6666', '6666', 'wu', 'ghcjmhgfj'),
+(6, '1234', '1234', 'bob', 'ghkmjhgk');
 
 -- --------------------------------------------------------
 
@@ -94,13 +99,12 @@ CREATE TABLE `image` (
 --
 
 INSERT INTO `image` (`id`, `img`, `sh`) VALUES
-(3, '01D02.jpg', 1),
-(4, '01D04.jpg', 1),
-(5, '01D05.jpg', 1),
-(6, '01D07.jpg', 1),
-(7, '01D08.jpg', 1),
-(8, '01D09.jpg', 1),
-(9, '01C06.gif', 1);
+(3, '11.jpg', 1),
+(4, '05.jpg', 1),
+(5, '08.jpg', 1),
+(10, '03.jpg', 1),
+(11, '06.jpg', 1),
+(12, '10.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -124,9 +128,8 @@ INSERT INTO `menu` (`id`, `text`, `href`, `sh`, `menu_id`) VALUES
 (3, '管理登入', 'index.php?do=admin', 1, 0),
 (4, '網站首頁', 'index.php', 1, 0),
 (10, 'hjjhgf', '', 1, 8),
-(12, '更多內容', 'index.php', 1, 4),
-(13, 'hjjhgf', 'https://github.com/', 1, 4),
-(15, 'xfnmhgfcm', 'https://github.com/', 1, 3);
+(16, '圖片', 'index.php?do=images', 1, 0),
+(17, '會員系統', 'index.php?do=login', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -145,10 +148,9 @@ CREATE TABLE `mvim` (
 --
 
 INSERT INTO `mvim` (`id`, `img`, `sh`) VALUES
-(5, '01C01.gif', 1),
-(6, '01C02.gif', 1),
-(7, '01C03.gif', 1),
-(8, '01C05.gif', 1);
+(6, '08.jpg', 1),
+(7, '10.jpg', 1),
+(8, '07.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -194,8 +196,8 @@ CREATE TABLE `titles` (
 --
 
 INSERT INTO `titles` (`id`, `img`, `text`, `sh`) VALUES
-(2, '01B03.jpg', '69877', 0),
-(5, '01B02.jpg', '03jlkj;lk', 1),
+(2, '01B03.jpg', '69877', 1),
+(5, '01B02.jpg', '03jlkj;lk', 0),
 (6, '01B04.jpg', '01dfgfd', 0),
 (7, '01B01.jpg', '01dfgfd', 0);
 
@@ -215,7 +217,7 @@ CREATE TABLE `total` (
 --
 
 INSERT INTO `total` (`id`, `total`) VALUES
-(1, 4);
+(1, 15);
 
 --
 -- 已傾印資料表的索引
@@ -289,7 +291,7 @@ ALTER TABLE `ad`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `bottom`
@@ -301,13 +303,13 @@ ALTER TABLE `bottom`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `mvim`
