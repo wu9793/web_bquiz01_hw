@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-01-10 09:35:15
+-- 產生時間： 2024-01-10 17:33:15
 -- 伺服器版本： 10.4.28-MariaDB
 -- PHP 版本： 8.2.4
 
@@ -125,11 +125,10 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `text`, `href`, `sh`, `menu_id`) VALUES
-(3, '管理登入', 'index.php?do=admin', 1, 0),
-(4, '網站首頁', 'index.php', 1, 0),
+(3, '關於我們', 'index.php', 1, 0),
+(4, '首頁', 'index.php', 1, 0),
 (10, 'hjjhgf', '', 1, 8),
-(16, '圖片', 'index.php?do=images', 1, 0),
-(17, '會員系統', 'index.php?do=login', 1, 0);
+(16, '圖片', 'index.php?do=images', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -196,10 +195,7 @@ CREATE TABLE `titles` (
 --
 
 INSERT INTO `titles` (`id`, `img`, `text`, `sh`) VALUES
-(2, '01B03.jpg', '69877', 1),
-(5, '01B02.jpg', '03jlkj;lk', 0),
-(6, '01B04.jpg', '01dfgfd', 0),
-(7, '01B01.jpg', '01dfgfd', 0);
+(8, '12.jpg', '', 1);
 
 -- --------------------------------------------------------
 
@@ -327,7 +323,7 @@ ALTER TABLE `news`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `titles`
 --
 ALTER TABLE `titles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `total`
