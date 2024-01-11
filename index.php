@@ -63,59 +63,17 @@
 	</div>
 	<!-- navbar -->
 
-	<!--標題-->
-	<div class="container-fluid h-100">
-		<div class="row h-100">
-			<div class="col-4 d-flex justify-content-center align-items-center">
-				<p class="slogn fw-bolder border-start border-light pl-3 border-5">
-					Super <br>
-					Delicious <br>
-					BURGER
-				</p>
-			</div>
-			<div class="col-8">
-				<?php
-				$title = $Title->find(['sh' => 1]);
-				?>
-				<a class="" title="<?= $title['text']; ?>" href="index.php">
-					<div class="bg-img" style="background-image:url(&#39;./img/<?= $title['img']; ?>&#39;);"></div>
-				</a>
-			</div>
-		</div>
-	</div>
-	<!--標題-->
-	<div class="container-fluid h-100" style="background-color: #E0E0E0;">
-		<div class="row h-100">
-			<div class="col-sm col-8 mx-auto w-50 h-100 p-sm-5">
-				<p class="about text-light fw-bolder pt-5">
-					ABOUT US
-				</p>
-				<p class="about-us text-light fw-bolder">關於我們</p>
-				<p class="text-light pt-5 pb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, magnam
-					repudiandae aspernatur quae, architecto perspiciatis ducimus nisi officia, illum atque fugiat delectus nulla
-					molestias corrupti fuga voluptas cupiditate ex nam.</p>
-			</div>
-			<div class="col-4 about-img"></div>
-		</div>
-	</div>
-
-	<div class="container">
-
-		<!-- main -->
-		<?php
-		$do = $_GET['do'] ?? 'main';
-		$file = "./front/{$do}.php";
-		if (file_exists($file)) {
-			include $file;
-		} else {
-			include "./front/main.php";
-		}
-		?>
-		<!-- main -->
-
-
-	</div>
-	<!-- 校園映象區 -->
+	<!-- main -->
+	<?php
+	$do = $_GET['do'] ?? 'main';
+	$file = "./front/{$do}.php";
+	if (file_exists($file)) {
+		include $file;
+	} else {
+		include "./front/main.php";
+	}
+	?>
+	<!-- main -->
 	<br>
 	<hr>
 	<br>
@@ -201,8 +159,6 @@
 
 			</div>
 		</div>
-		<!-- 邊選單 end -->
-
 	</div>
 	<div class="offcanvas offcanvas-end" id="side-login">
 		<?php

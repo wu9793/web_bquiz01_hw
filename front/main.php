@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/css.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    	<!-- Bootstrap JavaScript 和 jQuery（下拉式選單所需） -->
-        <script src="./js/jquery-1.9.1.min.js"></script>
+    <!-- Bootstrap JavaScript 和 jQuery（下拉式選單所需） -->
+    <script src="./js/jquery-1.9.1.min.js"></script>
     <style>
         .more-new {
             width: 300px;
@@ -28,8 +29,41 @@
 </head>
 
 <body>
-    <?php //include_once "marquee.php"; 
-    ?>
+    <!--標題-->
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-4 d-flex justify-content-center align-items-center">
+                <p class="slogn fw-bolder border-start border-light pl-3 border-5">
+                    Super <br>
+                    Delicious <br>
+                    BURGER
+                </p>
+            </div>
+            <div class="col-8">
+                <?php
+                $title = $Title->find(['sh' => 1]);
+                ?>
+                <a class="" title="<?= $title['text']; ?>" href="index.php">
+                    <div class="bg-img" style="background-image:url(&#39;./img/<?= $title['img']; ?>&#39;);"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--標題-->
+    <div class="container-fluid h-100" style="background-color: #E0E0E0;">
+        <div class="row h-100">
+            <div class="col-sm col-8 mx-auto w-50 h-100 p-sm-5">
+                <p class="about text-light fw-bolder pt-5">
+                    ABOUT US
+                </p>
+                <p class="about-us text-light fw-bolder">關於我們</p>
+                <p class="text-light pt-5 pb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, magnam
+                    repudiandae aspernatur quae, architecto perspiciatis ducimus nisi officia, illum atque fugiat delectus nulla
+                    molestias corrupti fuga voluptas cupiditate ex nam.</p>
+            </div>
+            <div class="col-4 about-img"></div>
+        </div>
+    </div>
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
