@@ -47,7 +47,7 @@ if (!isset($_SESSION['user'])) {
 			</a>
 			<!-- 管理登入 -->
 			<div class="d-flex" style="float:right">
-				<button class="btn btn-dark" onclick="document.cookie='user=';location.href='./api/logout.php'" style="">登出</button>
+				<button class="btn btn-dark" onclick="document.cookie='user=';location.href='./api/logout.php'">登出</button>
 			</div>
 			<!-- 管理登入 -->
 		</nav>
@@ -56,8 +56,9 @@ if (!isset($_SESSION['user'])) {
 
 	<div class="container-fluid h-100">
 		<div class="row h-100">
-			<div class="col-sm-2 hidden-xs h-100 bg-success text-center">
+			<div class="col-sm-2 hidden-xs h-100 text-center">
 				<h2>後台管理選單</h2>
+				<hr class="" style="color: black;">
 				<div class="row h-100 flex-column">
 					<div class="col-12 nav-item">
 						<a class="back-menu" href="?do=title">

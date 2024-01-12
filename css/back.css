@@ -2,6 +2,10 @@
 	height: 100vh;
 }
 
+.w-100{
+    width: 100%;
+}
+
 .flex-column{
     display: flex;
     flex-direction: column;
@@ -13,11 +17,13 @@
 	color:#000; 
 	font-size:20px; 
 	text-decoration:none;
+    padding: 10px;
 }
 
 .back-menu:hover{
-	text-decoration:none;
-
+    text-decoration:none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
 .nav-item{
