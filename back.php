@@ -10,7 +10,7 @@ if (!isset($_SESSION['user'])) {
 	<title>Back</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -46,58 +46,59 @@ if (!isset($_SESSION['user'])) {
 				W&nbsp;<i class="fa-solid fa-burger"></i>&nbsp;BURGER
 			</a>
 			<!-- 管理登入 -->
-			<div class="d-flex" style="float:right">
-				<button class="btn btn-dark" onclick="document.cookie='user=';location.href='./api/logout.php'">登出</button>
+			<div class="d-md-flex ml-auto" style="margin-left: auto;">
+
+				<button type="button" class="btn btn-outline-danger" onclick="document.cookie='user=';location.href='./api/logout.php'">登出</button>
 			</div>
 			<!-- 管理登入 -->
 		</nav>
 	</div>
 	<!-- navbar -->
 
-	<div class="container-fluid h-100">
+	<div class="container-fluid h-100 mt-3">
 		<div class="row h-100">
-			<div class="col-sm-2 hidden-xs h-100 text-center">
+			<div class="col-sm-2 hidden-xs h-100 text-center  border-end">
 				<h2>後台管理選單</h2>
 				<hr class="" style="color: black;">
 				<div class="row h-100 flex-column">
 					<div class="col-12 nav-item">
 						<a class="back-menu" href="?do=title">
-							網站標題管理
+							標題圖片
 						</a>
 					</div>
 					<div class="col-12 nav-item">
 						<a class="back-menu" href="?do=ad">
-							動態文字廣告管理
+							文字廣告
 						</a>
 					</div>
 					<div class="col-12 nav-item">
 						<a class="back-menu" href="?do=mvim">
-							動畫圖片管理
+							動畫圖片
 						</a>
 					</div>
 					<div class="col-12 nav-item">
 						<a class="back-menu" href="?do=image">
-							校園映象資料管理
+							產品管理
 						</a>
 					</div>
 					<div class="col-12 nav-item">
 						<a class="back-menu" href="?do=total">
-							進站總人數管理
+							進站人數
 						</a>
 					</div>
 					<div class="col-12 nav-item">
 						<a class="back-menu" href="?do=bottom">
-							頁尾版權資料管理
+							頁尾版權
 						</a>
 					</div>
 					<div class="col-12 nav-item">
 						<a class="back-menu" href="?do=news">
-							最新消息資料管理
+							最新消息
 						</a>
 					</div>
 					<div class="col-12 nav-item">
 						<a class="back-menu" href="?do=admin">
-							管理者帳號管理
+							帳號管理
 						</a>
 					</div>
 					<div class="col-12 nav-item">
@@ -105,27 +106,36 @@ if (!isset($_SESSION['user'])) {
 							選單管理
 						</a>
 					</div>
+					<br>
+					<br>
+					<div class="col-12 nav-item">
+						<a class="back-menu" href="index.php">
+							<i class="fa-solid fa-house"></i>&nbsp;&nbsp;回首頁
+						</a>
+					</div>
 				</div>
 			</div>
 
-			<div class="col-sm-10 h-100 bg-danger">
-				<!-- <div id="cover" style="display:none; ">
+			<div class="col-sm-10 h-100">
+				<div id="cover" style="display:none; ">
 					<div id="coverr">
-						<a style="position:absolute; right:3px; top:4px; cursor:pointer; z-index:9999;" onclick="cl('#cover')">X</a>
+						<a style="position:absolute; right:15px; top:10px; cursor:pointer; z-index:9999;" onclick="cl('#cover')">
+							<i class="fa-solid fa-xmark"></i>
+						</a>
 						<div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;"></div>
 					</div>
-				</div> -->
-					<!--正中央-->
+				</div>
+				<!--正中央-->
 
-					<?php
-					$do = $_GET['do'] ?? 'title';
-					$file = "./back/{$do}.php";
-					if (file_exists($file)) {
-						include $file;
-					} else {
-						include "./back/title.php";
-					}
-					?>
+				<?php
+				$do = $_GET['do'] ?? 'title';
+				$file = "./back/{$do}.php";
+				if (file_exists($file)) {
+					include $file;
+				} else {
+					include "./back/title.php";
+				}
+				?>
 
 			</div>
 		</div>

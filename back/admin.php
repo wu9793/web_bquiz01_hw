@@ -1,43 +1,42 @@
-<div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-    <p class="t cent botli">管理者帳號管理</p>
-    <form method="post" action="/api/edit.php">
-        <table style="width:100%; text-align:center">
-            <tbody>
-                <tr class="yel">
-                    <td width="45%">帳號</td>
-                    <td width="45%">密碼</td>
-                    <td width="10%">刪除</td>
-                </tr>
-                <?php
+<main class="container mb-5">
+    <h3 class="text-center">帳號管理</h3>
+    <hr>
+    <form action="../api/edit.php" method="post">
+        <table class='table table-bordered text-center'>
+            <tr>
+                <td>帳號</td>
+                <td>密碼</td>
+                <td style="width: 5%;">刪除</td>
+            </tr>
+            <?php
                 $rows = $DB->all();
                 foreach ($rows as $row) {
-                ?>
-                    <tr>
-                        <td>
-                            <input type="text" name="acc[]" style="width: 90%;" value="<?= $row['acc']; ?>">
-                        </td>
-                        <td>
-                            <input type="password" name="pw[]" value="<?= $row['pw']; ?>">
-                        </td>
-                        <td>
-                            <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
-                        </td>
-                        <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
-                    </tr>
-                <?php
-                }
-                ?>
-            </tbody>
-        </table>
-        <table style=" width:100%; margin:auto; margin-top:40px;">
-            <tbody>
-                <tr>
-                    <input type="hidden" name="table" value="<?= $do; ?>">
-                    <td width="200px"><input type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增管理者帳號"></td>
-                    <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
+            ?>
+                <tr class="align-middle">
+                    <td class="">
+                    <input type="text" name="acc[]" style="width: 90%;" value="<?= $row['acc']; ?>">
+                    </td>
+                    <td class="">
+                    <input type="password" name="pw[]" value="<?= $row['pw']; ?>">
+                    </td>
+                    <td style="padding-left: 25px;">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="del[]" value="<?= $row['id']; ?>">
+                        </div>
+                    </td>
+                    <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                 </tr>
-            </tbody>
+            <?php
+            }
+            ?>
         </table>
-
+        <div class="d-flex justify-content-between">
+            <input type="hidden" name="table" value="<?= $do; ?>">
+            <div><input type="button" class="btn btn-outline-primary" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增管理者帳號"></div>
+            <div>
+                <input type="submit" class="btn btn-outline-primary" value="修改確定">
+                <input type="reset" class="btn btn-outline-danger" value="重置">
+            </div>
+        </div>
     </form>
-</div>
+</main>

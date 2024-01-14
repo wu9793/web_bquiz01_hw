@@ -1,67 +1,50 @@
-<div class="container-fluid">
-    <p class="back-title">網站標題管理</p>
+<main class="container mb-5">
+    <h3 class="text-center">標題圖片</h3>
     <hr>
-    <form method="post" action="./api/edit.php">
-        <table class="text-center w-100">
-            <tbody>
-                <tr class="bg-gray">
-                    <td style="width:50%; height:40px">
-                        <h4>網站標題</h4>
+    <div><input type="button" class="btn btn-outline-primary" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增網站標題圖片"></div>
+    <form action="../api/edit.php" method="post">
+        <table class='table table-bordered text-center mt-3'>
+            <tr>
+                <td>標題圖片</td>
+                <td style="width: 5%;">顯示</td>
+                <td style="width: 5%;">刪除</td>
+                <td style="width: 10%;"></td>
+            </tr>
+            <?php
+            $rows = $Title->all();
+            foreach ($rows as $row) {
+            ?>
+                <tr class="align-middle">
+                    <td>
+                        <img class="object-fit-cover" src="./img/<?= $row['img']; ?>" style="width:300px;height:300px">
                     </td>
-                    <td style="width:10%; height:40px">
-                        <h4>顯示</h4>
+                    <td style="padding-left: 20px;">
+                        <!-- <input type="radio" name="sh" id="" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>> -->
+                        <div class="form-check form-switch" >
+                            <input class="form-check-input " type="checkbox" name="sh" id="" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
+                        </div>
                     </td>
-                    <td style="width:10%; height:40px">
-                        <h4>刪除</h4>
+                    <td style="padding-left: 25px;">
+                        <!-- <input type="checkbox" name="del[]" id="" value="<?= $row['id']; ?>"> -->
+                        <div class="form-check" >
+                            <input class="form-check-input" type="checkbox" name="del[]" value="<?= $row['id']; ?>">
+                        </div>
                     </td>
-                    <td></td>
+                    <td>
+                        <input class='btn btn-primary' type="button" value="更新圖片" onclick="op('#cover','#cvr','./modal/upload.php?table=<?= $do; ?>&id=<?= $row['id']; ?>')">
+                    </td>
+                    <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                 </tr>
-                <?php
-                $rows = $DB->all();
-                foreach ($rows as $row) {
-                ?>
-                    <tr class="">
-                        <td style="width:50%; padding-top: 20px;">
-                            <img src="./img/<?= $row['img']; ?>" style="width:200px; height:200px;">
-                        </td>
-                        <!-- <td width="23%">
-                            <input type="text" name="text[]" style="width: 90%;" value="<?= $row['text']; ?>">
-                            <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
-
-                        </td> -->
-                        <td style="width:10%; padding-top: 20px;">
-                            <input type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
-                        </td>
-                        <td style="width:10%; padding-top: 20px;">
-                            <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
-                        </td>
-                        <td style="width:20%; padding-top: 20px;">
-                            <input type="button" class="btn btn-success" onclick="op('#cover','#cvr','./modal/upload.php?table=<?= $do; ?>&id=<?= $row['id']; ?>')" value="更新圖片">
-                        </td>
-                    </tr>
-                <?php
-                }
-                ?>
-            </tbody>
+            <?php
+            }
+            ?>
         </table>
-        <table style="margin-top:40px; width:70%;">
-            <tbody>
-                <tr>
-                    <input type="hidden" name="table" value="<?= $do; ?>">
-
-                    <td width="200px">
-                        <input type="button" class="btn btn-secondary" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增網站標題圖片">
-                    </td>
-                    <td class="cent">
-                        <input type="submit" class="btn btn-secondary" value="修改確定">
-                        <input type="reset" class="btn btn-secondary" value="重置">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
+        <div class="d-flex justify-content-end mt-3">
+            <input type="hidden" name="table" value="<?= $do; ?>">
+            <div>
+                <input type="submit" class="btn btn-outline-primary" value="修改確定">
+                <input type="reset" class="btn btn-outline-danger" value="重置">
+            </div>
+        </div>
     </form>
-
-
-
-</div>
+</main>
