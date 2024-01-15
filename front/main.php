@@ -64,6 +64,16 @@
             <div class="col-4 about-img"></div>
         </div>
     </div>
+    <div class="container-fluid h-80">
+        <div class="row h-80">
+            <div class="col-4 h-80 border border-black p-5">
+                <img src="../img/18.jpg" alt="">
+            </div>
+            <div class="col-4 border border-black p-5"></div>
+            <div class="col-4 border border-black p-5"></div>
+        </div>
+    </div>
+    <!-- 輪播 -->
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -91,6 +101,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <!-- 輪播 -->
 
     <br>
     <hr>
@@ -132,7 +143,7 @@
     <hr>
     <br>
     <!-- 校園映象區 -->
-    <h3 class="">校園映象區</h3>
+    <h3 class="">商品</h3>
     <div class="card-group row">
 
         <?php
