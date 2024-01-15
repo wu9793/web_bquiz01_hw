@@ -64,13 +64,19 @@
             <div class="col-4 about-img"></div>
         </div>
     </div>
-    <div class="container-fluid h-80">
-        <div class="row h-80">
-            <div class="col-4 h-80 border border-black p-5">
-                <img src="../img/18.jpg" alt="">
+    <div class="container-fluid h-80 postwall">
+        <div class="row h-80 mx-auto align-items-center">
+            <div class="col-sm-4 h-80 text-center d-flex align-items-center justify-content-center">
+                <img src="../img/13.jpg" class="w-75 rounded h-75 post">
+                
+                <!-- <p class="fs-3 text-light">Products</p>    -->
             </div>
-            <div class="col-4 border border-black p-5"></div>
-            <div class="col-4 border border-black p-5"></div>
+            <div class="col-sm-4 h-80 d-flex align-items-center justify-content-center">
+                <img src="../img/17.jpg" class="w-75 rounded  h-75">
+            </div>
+            <div class="col-sm-4 h-80 d-flex align-items-center justify-content-center">
+                <img src="../img/16.jpg" class="w-75 rounded  h-75">
+            </div>
         </div>
     </div>
     <!-- 輪播 -->
