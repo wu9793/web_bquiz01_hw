@@ -64,19 +64,20 @@
 	<!-- navbar -->
 
 	<!-- main -->
-	<?php
-	$do = $_GET['do'] ?? 'main';
-	$file = "./front/{$do}.php";
-	if (file_exists($file)) {
-		include $file;
-	} else {
-		include "./front/main.php";
-	}
-	?>
+	<div class="main">
+		<?php
+		$do = $_GET['do'] ?? 'main';
+		$file = "./front/{$do}.php";
+		if (file_exists($file)) {
+			include $file;
+		} else {
+			include "./front/main.php";
+		}
+		?>
+	</div>
 	<!-- main -->
 	<br>
 	<hr>
-	<br>
 	</div>
 	<div class="container-fluid">
 		<div class="container footer">

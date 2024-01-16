@@ -162,6 +162,8 @@ $Image=new DB('image');
 $News=new DB('news');
 $Admin=new DB('admin');
 $Menu=new DB('menu');
+$About=new DB('about');
+
 
 
 $tables=array_keys(get_defined_vars());
