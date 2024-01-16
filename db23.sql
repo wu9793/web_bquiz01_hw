@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-01-14 18:04:10
+-- 產生時間： 2024-01-16 09:38:49
 -- 伺服器版本： 10.4.28-MariaDB
 -- PHP 版本： 8.2.4
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- 資料庫： `db23`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `about`
+--
+
+CREATE TABLE `about` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `story` text NOT NULL,
+  `item` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `about`
+--
+
+INSERT INTO `about` (`id`, `story`, `item`) VALUES
+(1, '在一個充滿活力和熱情的小鎮裡，有一家名叫「W.burger」的漢堡店，它不僅僅是一家餐廳，更是一種生活方式的象徵。W.burger的故事始於一位年輕且充滿創意的廚師，他熱愛美味，對生活充滿激情。\r\n\r\n美味的起源\r\nW.burger的創始人，馬克·漢密爾頓，是一位對美食有著無窮熱愛的廚師。他在全球旅行中品嚐了各種文化的美食，但最終，他發現最令人難以忘懷的就是家鄉的味道。馬克回到家鄉，將他的熱情注入了每一個漢堡的製作過程中。\r\n\r\n新鮮與創新\r\nW.burger以新鮮和創新為品牌的核心價值。我們不僅注重使用當地新鮮食材，更堅持保持原始的味道和品質。每一個漢堡都是獨一無二的藝術品，代表著馬克對美味的堅持和對食材的尊重。\r\n\r\n社區的力量\r\nW.burger不僅僅是一家餐廳，更是社區的一部分。我們積極參與當地社區活動，支持本地農產品和當地企業。我們的員工不僅是廚師和服務員，更是社區的一份子，共同創造一個充滿活力的社區。\r\n\r\n擴張與分享\r\n隨著W.burger的成功，我們將這份熱情和美味帶給更多的地方。我們的擴張計劃不僅僅是為了開設更多分店，更是為了將W.burger的品味和品牌故事分享給更廣泛的社群。', '「W.burger」\r\n不僅僅是一頓美味的漢堡，\r\n更是一場對美味、創新和社區的熱情之旅。\r\n讓我們一同品味生活，分享美味，蓬勃生活！');
 
 -- --------------------------------------------------------
 
@@ -125,8 +144,8 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `text`, `href`, `sh`, `menu_id`) VALUES
-(3, '關於我們', 'index.php', 1, 0),
-(4, '首頁', 'index.php', 1, 0),
+(3, '首頁', 'index.php', 1, 0),
+(4, '關於我們', 'index.php?do=about', 1, 0),
 (10, 'hjjhgf', '', 1, 8),
 (16, '圖片', 'index.php?do=images', 1, 0);
 
@@ -147,9 +166,10 @@ CREATE TABLE `mvim` (
 --
 
 INSERT INTO `mvim` (`id`, `img`, `sh`) VALUES
-(6, '08.jpg', 1),
-(7, '10.jpg', 1),
-(8, '07.jpg', 1);
+(6, '15.jpg', 1),
+(7, '14.jpg', 1),
+(8, '20.jpg', 1),
+(9, '21.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -215,11 +235,17 @@ CREATE TABLE `total` (
 --
 
 INSERT INTO `total` (`id`, `total`) VALUES
-(1, 18);
+(1, 20);
 
 --
 -- 已傾印資料表的索引
 --
+
+--
+-- 資料表索引 `about`
+--
+ALTER TABLE `about`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- 資料表索引 `ad`
@@ -280,6 +306,12 @@ ALTER TABLE `total`
 --
 
 --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `about`
+--
+ALTER TABLE `about`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- 使用資料表自動遞增(AUTO_INCREMENT) `ad`
 --
 ALTER TABLE `ad`
@@ -313,7 +345,7 @@ ALTER TABLE `menu`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `mvim`
 --
 ALTER TABLE `mvim`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `news`
