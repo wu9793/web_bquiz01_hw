@@ -3,7 +3,16 @@
 <form action="./api/add.php" method="post" enctype="multipart/form-data">
     <table class="col-8 m-auto">
         <tr>
+            <td>商品圖片</td>
             <td><input type="file" name="img" id=""></td>
+        </tr>
+        <tr>
+            <td>商品名稱</td>
+            <td><input type="text" name="title" value=""></td>
+        </tr>
+        <tr>
+            <td>價格</td>
+            <td><input type="price" name="price" value=""></td>
         </tr>
     </table>
     <div class="text-center mt-3">

@@ -10,6 +10,7 @@
         $start = ($now - 1) * $div;
         $rows = $DB->all(" limit $start,$div");
         ?>
+        <!-- 分頁 -->
         <div class="d-flex mleft-80 mb-3 mt-3">
             <?php
             if ($now > 1) {
@@ -35,6 +36,8 @@
         <table class='table table-bordered text-center'>
             <tr>
                 <td>商品圖片</td>
+                <td>商品名稱</td>
+                <td>價格</td>
                 <td style="width: 5%;">顯示</td>
                 <td style="width: 5%;">刪除</td>
                 <td style="width: 10%;"></td>
@@ -45,6 +48,12 @@
                 <tr class="align-middle">
                     <td>
                         <img class="object-fit-cover" src="./img/<?= $row['img']; ?>" style="width:300px;height:300px">
+                    </td>
+                    <td>
+                        <input type="text" name="title[]" value="<?= $row['title']; ?>">
+                    </td>
+                    <td>
+                        <input type="price" name="price[]" value="<?= $row['price']; ?>">
                     </td>
                     <td style="padding-left: 20px;">
                         <div class="form-check form-switch">

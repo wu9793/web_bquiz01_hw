@@ -45,11 +45,10 @@
                 <p class="about text-light fw-bolder pt-1">
                     ABOUT US
                 </p>
-                <p class="about-us text-light fw-bolder">關於我們</p>
-                <p class="text-light pt-5 pb-5">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, magnam
-                    repudiandae aspernatur quae, architecto perspiciatis ducimus nisi officia, illum atque fugiat delectus nulla
-                    molestias corrupti fuga voluptas cupiditate ex nam.
+                <p class="about-us text-dark fw-bolder">關於我們</p>
+                <p class="text-dark pt-5 pb-5">
+                    每個W.burger漢堡都是經過精心製作的手工藝品。我們堅持使用最優質的肉類和新鮮的當地食材，以確保每一口都是絕對美味。<br>
+                    我們不只是提供美味的漢堡，更是創造一個愉快的用餐體驗。我們的團隊充滿熱情，始終以最高水準的服務迎接每一位顧客。
                 </p>
                 <a href="?do=about">
                     <button type="button" class="btn btn-lg btn-outline-dark rounded-5">查看更多</button>
@@ -67,15 +66,15 @@
         <div class="row h-75 mx-auto align-items-center w-75">
             <div class="col-sm-4 h-75 item-box ">
                 <a href="?do=images"><img src="../img/13.jpg" class="rounded-5 post"></a>
-                <p>Sold out</p>
+                <p>Burger</p>
             </div>
             <div class="col-sm-4 h-75 item-box ">
                 <a href="?do=images"><img src="../img/17.jpg" class="rounded-5 post"></a>
-                <p>Sold out</p>
+                <p>Fried Food</p>
             </div>
             <div class="col-sm-4 h-75 item-box ">
                 <a href="?do=images"><img src="../img/16.jpg" class="rounded-5 post"></a>
-                <p>Sold out</p>
+                <p>Drink</p>
             </div>
         </div>
     </div>
@@ -139,11 +138,9 @@
             </div>
         </div>
     </div>
-
     <br>
     <hr>
     <br>
-
     <!-- list group -->
     <h2>NEWS</h2>
     <div class="list-group mt-3">
@@ -179,41 +176,47 @@
     <br>
     <hr>
     <br>
-    <!-- 校園映象區 -->
-    <!-- <h3 class="">商品</h3> -->
-    <!-- <div class="card-group row">
+    <!-- 商品 -->
+    <div class="container">
+        <h2 class="fw-bold">美味漢堡</h2>
+        <br>
+        <div class="card-group row">
+            <?php
+            $imgs = $Image->all(['sh' => 1]);
 
-        <?php
-        $imgs = $Image->all(['sh' => 1]);
-
-        foreach ($imgs as $idx => $img) {
-        ?>
-            <div class="col-4">
-                <div id="ssaa<?= $idx; ?>" class="card d-flex p-2 pb-0 rounded-4 border-0">
-                    <img src="./img/<?= $img['img']; ?>" class="card-img-top rounded-4 card-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            foreach ($imgs as $idx => $img) {
+                if ($idx >= 6) {
+                    break; // Break out of the loop after 6 iterations
+                }
+            ?>
+                <div class="col-4">
+                    <div id="ssaa<?= $idx; ?>" class="card d-flex p-2 pb-0 rounded-4 border-0">
+                        <img src="./img/<?= $img['img']; ?>" class="card-img-top rounded-4 card-img">
+                        <div class="card-body">
+                            <h5 class="card-title mt-2 fw-bold"><?= $img['title']; ?></h5>
+                            <p class="card-text mt-2 price">$<?= $img['price']; ?></p>
+                            <button class="btn btn-outline-dark" style="width: 100%;">加入購物車</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <?php
-        }
-        ?>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col mx-auto" style="margin: auto;">
-            <div class="more-new">
-                <?php
-                if ($Image->count(['sh' => 1]) > 5) {
-                    echo '<a href="?do=images">查看更多</a>';
-                }
-                ?>
+            <?php
+            }
+            ?>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col mx-auto" style="margin: auto;">
+                
+                    <?php
+                    if ($Image->count(['sh' => 1]) > 5) {
+                        echo '<a class="text-none" href="?do=images"><div class="more-new">查看更多</div></a>';
+                    }
+                    ?>
+                </div>
             </div>
         </div>
-    </div> -->
+    </div>
+    <!-- 商品 -->
 
 </body>
 

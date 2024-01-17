@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>HAMBURGER</title>
+	<title>W.BURGER</title>
 	<link href="./css/css.css" rel="stylesheet" type="text/css">
 	<script src="./js/jquery-1.9.1.min.js"></script>
 	<script src="./js/js.js"></script>
@@ -79,13 +79,14 @@
 	<br>
 	<hr>
 	</div>
+	<!-- footer -->
 	<div class="container-fluid">
 		<div class="container footer">
 			<div class="row mx-auto">
 				<div class="col">
 					<p class="footer-header">ABOUT US</p>
-					<p><a href="">Our Story</a></p>
-					<p><a href="">Location</a></p>
+					<p><a href="?do=about">Our Story</a></p>
+					<p><a href="?do=contact">Contact US</a></p>
 				</div>
 				<div class="col">
 					<p class="footer-header">CUSTOMER SERVICE</p>
@@ -132,7 +133,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- footer -->
 	<div class="copyright">
 		<p class="">
 			Copyright&nbsp;<i class="fa-solid fa-copyright mx-2"></i><?= $Bottom->find(1)['bottom']; ?>&nbsp;|&nbsp;All Rights Reserved
