@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-01-16 09:38:49
+-- 產生時間： 2024-01-17 09:35:12
 -- 伺服器版本： 10.4.28-MariaDB
 -- PHP 版本： 8.2.4
 
@@ -104,12 +104,64 @@ INSERT INTO `bottom` (`id`, `bottom`) VALUES
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `drink`
+--
+
+CREATE TABLE `drink` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `img` text NOT NULL,
+  `title` text NOT NULL,
+  `price` int(10) NOT NULL,
+  `sh` int(1) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `drink`
+--
+
+INSERT INTO `drink` (`id`, `img`, `title`, `price`, `sh`) VALUES
+(1, 'victor-rutka-4FujjkcI40g-unsplash.jpg', '楓糖OREO奶昔', 49, 1),
+(2, 'pariwat-pannium-qdDQ6V7lV9Y-unsplash.jpg', '香草焦糖拿鐵', 49, 1),
+(3, 'juliet-frias-WDgN0XclV_w-unsplash.jpg', '檸檬冰茶', 39, 1),
+(4, 'kaffee-meister-BIeXZhg_7sw-unsplash.jpg', '冰紅茶', 29, 1),
+(5, 'giovanna-gomes-IHKR_A_THW0-unsplash.jpg', '可樂', 29, 1),
+(6, 'tetiana-shyshkina-4Lqjr8gu_bg-unsplash.jpg', '楓糖奶昔', 49, 1);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `fried`
+--
+
+CREATE TABLE `fried` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `img` text NOT NULL,
+  `title` text NOT NULL,
+  `price` int(10) NOT NULL,
+  `sh` int(1) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `fried`
+--
+
+INSERT INTO `fried` (`id`, `img`, `title`, `price`, `sh`) VALUES
+(1, '1.jpg', '金酥香脆薯片', 69, 1),
+(2, '2.jpg', '香橙辣椒薯條', 59, 1),
+(3, '3.jpg', '香辣炸雞嫩腿', 99, 1),
+(4, '4.jpg', '海鮮脆皮春卷', 99, 1);
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `image`
 --
 
 CREATE TABLE `image` (
   `id` int(10) UNSIGNED NOT NULL,
   `img` text NOT NULL,
+  `title` text NOT NULL,
+  `price` int(10) NOT NULL,
   `sh` int(1) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -117,13 +169,14 @@ CREATE TABLE `image` (
 -- 傾印資料表的資料 `image`
 --
 
-INSERT INTO `image` (`id`, `img`, `sh`) VALUES
-(3, '11.jpg', 1),
-(4, '05.jpg', 1),
-(5, '08.jpg', 1),
-(10, '03.jpg', 1),
-(11, '06.jpg', 1),
-(12, '10.jpg', 1);
+INSERT INTO `image` (`id`, `img`, `title`, `price`, `sh`) VALUES
+(3, '27.jpg', '狂野蓮花堡', 149, 1),
+(4, '26.jpg', '極地雙層狐堡', 159, 1),
+(5, '20.jpg', '蔬食者的樂園堡', 129, 1),
+(10, '24.jpg', '火山燒烤霸主堡', 169, 1),
+(11, '25.jpg', '魔幻芝心漢堡', 149, 1),
+(12, '29.jpg', '海洋王國特濃堡', 149, 1),
+(13, '23.jpg', '楓糖招牌煙燻堡', 159, 1);
 
 -- --------------------------------------------------------
 
@@ -147,7 +200,7 @@ INSERT INTO `menu` (`id`, `text`, `href`, `sh`, `menu_id`) VALUES
 (3, '首頁', 'index.php', 1, 0),
 (4, '關於我們', 'index.php?do=about', 1, 0),
 (10, 'hjjhgf', '', 1, 8),
-(16, '圖片', 'index.php?do=images', 1, 0);
+(16, '美味漢堡', 'index.php?do=images', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -235,7 +288,7 @@ CREATE TABLE `total` (
 --
 
 INSERT INTO `total` (`id`, `total`) VALUES
-(1, 20);
+(1, 21);
 
 --
 -- 已傾印資料表的索引
@@ -263,6 +316,18 @@ ALTER TABLE `admin`
 -- 資料表索引 `bottom`
 --
 ALTER TABLE `bottom`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `drink`
+--
+ALTER TABLE `drink`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `fried`
+--
+ALTER TABLE `fried`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -330,10 +395,22 @@ ALTER TABLE `bottom`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `drink`
+--
+ALTER TABLE `drink`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `fried`
+--
+ALTER TABLE `fried`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- 使用資料表自動遞增(AUTO_INCREMENT) `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `menu`
