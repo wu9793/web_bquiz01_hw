@@ -46,15 +46,15 @@
     <div class="row h-75 mx-auto align-items-center w-75">
         <div class="col-sm-4 h-75 item-box ">
             <a href="?do=images"><img src="./img/13.jpg" class="rounded-5 post"></a>
-            <p>Burger</p>
+            <p>Burger / 漢堡</p>
         </div>
         <div class="col-sm-4 h-75 item-box ">
             <a href="?do=images"><img src="./img/17.jpg" class="rounded-5 post"></a>
-            <p>Fried Food</p>
+            <p>Fried Food / 炸物</p>
         </div>
         <div class="col-sm-4 h-75 item-box ">
             <a href="?do=images"><img src="./img/16.jpg" class="rounded-5 post"></a>
-            <p>Drink</p>
+            <p>Drink / 飲品</p>
         </div>
     </div>
 </div>

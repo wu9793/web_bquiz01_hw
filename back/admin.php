@@ -32,7 +32,7 @@
         </table>
         <div class="d-flex justify-content-between">
             <input type="hidden" name="table" value="<?= $do; ?>">
-            <div><input type="button" class="btn btn-outline-primary" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增管理者帳號"></div>
+            <div><input type="button" class="btn btn-outline-primary" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增帳號"></div>
             <div>
                 <input type="submit" class="btn btn-outline-primary" value="修改確定">
                 <input type="reset" class="btn btn-outline-danger" value="重置">

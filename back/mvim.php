@@ -31,7 +31,7 @@
                         </div>
                     </td>
                     <td>
-                        <input class='btn btn-primary' type="button" value="更新動畫" onclick="op('#cover','#cvr','./modal/upload.php?table=<?= $do; ?>&id=<?= $row['id']; ?>')">
+                        <input class='btn btn-primary' type="button" value="更新圖片" onclick="op('#cover','#cvr','./modal/upload.php?table=<?= $do; ?>&id=<?= $row['id']; ?>')">
                     </td>
                     <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                 </tr>

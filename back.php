@@ -82,16 +82,6 @@ if (!isset($_SESSION['user'])) {
 						</ul>
 					</div>
 					<div class="col-12 nav-item">
-						<a class="back-menu" href="?do=total">
-							進站人數
-						</a>
-					</div>
-					<div class="col-12 nav-item">
-						<a class="back-menu" href="?do=bottom">
-							頁尾版權
-						</a>
-					</div>
-					<div class="col-12 nav-item">
 						<a class="back-menu" href="?do=news">
 							最新消息
 						</a>

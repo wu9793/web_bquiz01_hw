@@ -1,7 +1,7 @@
 <main class="container mb-5">
     <h3 class="text-center">標題圖片</h3>
     <hr>
-    <div><input type="button" class="btn btn-outline-primary" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增網站標題圖片"></div>
+    <div><input type="button" class="btn btn-outline-primary" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增標題圖片"></div>
     <form action="../api/edit.php" method="post">
         <table class='table table-bordered text-center mt-3'>
             <tr>

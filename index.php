@@ -27,8 +27,8 @@
 			<a class="navbar-brand" href="index.php">
 				W&nbsp;<i class="fa-solid fa-burger"></i>&nbsp;BURGER
 			</a>
-			<!-- 管理登入 -->
 			<div class="" style="margin-left:1500px;">
+				<!-- 管理登入 -->
 				<?php
 				if (isset($_SESSION['login'])) {
 					to("back.php");
@@ -36,21 +36,10 @@
 				if (isset($_GET['error'])) {
 					echo "<script>alert('{$_GET['error']}')</script>";
 				}
-
 				?>
-				<?php
-				if (isset($_SESSION['login'])) {
-				?>
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="lo('back.php')">返回管理</button>
-				<?php
-				} else {
-				?>
-					<button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#side-login">
-						<i class="fa-solid fa-user"></i>
-					</button>
-				<?php
-				}
-				?>
+				<button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#side-login">
+					<i class="fa-solid fa-user"></i>
+				</button>
 				<!-- 管理登入 -->
 				<button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#side-shop">
 					<i class="fa-solid fa-bag-shopping"></i>
@@ -137,6 +126,7 @@
 
 
 	<!-- menu邊選單 -->
+	<!-- 選單 -->
 	<div class="offcanvas offcanvas-end" id="side-menu">
 		<div class="offcanvas-header">
 			<h2 class="fw-bold mb-5 text-center mt-5"></h2>
@@ -158,6 +148,9 @@
 			</div>
 		</div>
 	</div>
+	<!-- 選單 -->
+
+	<!-- 登入 -->
 	<div class="offcanvas offcanvas-end" id="side-login">
 		<?php
 		if (!isset($_SESSION['user'])) {
@@ -180,19 +173,18 @@
 							<div class="col">
 								<label class="label" for="pw">密碼</label>
 								<input class="form-control  w-100" id="pw" name="pw" type="password" placeholder="密碼">
-
 							</div>
 						</div>
 
 						<div class="row mt-3">
 							<div class="col-12">
-								<button type="submit" class="form-control btn btn-dark btn-block" onclick="login()">
+								<button type="submit" class="form-control btn btn-outline-success btn-block" onclick="login()">
 									登入
 								</button>
 							</div>
 							<div class="col-12 pt-2">
 								<a href="?do=reg">
-									<button type="submit" class="form-control btn border btn-light btn-block mb-4">
+									<button type="submit" class="form-control btn border btn-outline-warning btn-block mb-4">
 										加入會員
 									</button>
 								</a>
@@ -208,29 +200,38 @@
 				<h3 class="fw-bold mb-5 text-center mt-5">
 					歡迎,<?= $_SESSION['user']; ?>
 				</h3>
-				<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+				<button type="button" class="btn btn-close" data-bs-dismiss="offcanvas"></button>
 			</div>
 			<div class="offcanvas-body">
 				<div class="container">
-					<div class="mx-auto">
-						<div class="row mt-3">
-							<div class="col-12">
-								<button class="btn btn btn-dark btn-block" onclick="location.href='./api/logout.php'">登出</button>
+					<div class="row mt-3">
+						<div class="col-12">
+							<div class="d-grid gap-2">
+								<button class="btn btn-lg btn-outline-danger" onclick="location.href='./api/logout.php'">登出</button>
 								<?php
 								if ($_SESSION['user'] == 'admin') {
 								?>
-									<button class="btn btn btn-dark btn-block" onclick="location.href='back.php'">管理</button>
+									<button class="btn btn-lg btn-outline-dark" onclick="location.href='back.php'">管理</button>
+								<?php
+								} else {
+								?>
+									<button class="btn btn-lg btn-outline-warning" onclick="location.href='?do=member'">修改會員資料</button>
+								<?php
+								}
+								?>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-	<?php
-								}
-							}
-	?>
+		<?php
+		}
+		?>
 
 	</div>
+	<!-- 登入 -->
+
+	<!-- 購物車 -->
 	<div class="offcanvas offcanvas-end" id="side-shop">
 		<div class="offcanvas-header">
 			<h2 class="fw-bold mb-5 text-center mt-5">購物車</h2>
@@ -242,6 +243,8 @@
 
 
 	</div>
+	<!-- 購物車 -->
+
 	<!-- 邊選單 end -->
 
 </body>
