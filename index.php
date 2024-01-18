@@ -13,9 +13,9 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 	<!-- Bootstrap JavaScript 和 jQuery（下拉式選單所需） -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="./js/jquery-1.9.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
@@ -86,7 +86,6 @@
 				<div class="col">
 					<p class="footer-header">ABOUT US</p>
 					<p><a href="?do=about">Our Story</a></p>
-					<p><a href="?do=contact">Contact US</a></p>
 				</div>
 				<div class="col">
 					<p class="footer-header">CUSTOMER SERVICE</p>
@@ -95,14 +94,10 @@
 					<p><a href="">Privacy Policy</a></p>
 				</div>
 				<div class="col">
-					<!-- 進站總人數 -->
-					<div class="border border-secondary mx-auto text-center">
-						<span>進站總人數 : <?= $Total->find(1)['total']; ?></span>
-					</div>
-					<!-- 進站總人數 -->
-					<br>
-					<br>
-					<br>
+					<p class="footer-header">CONTACT US</p>
+					<P>243新北市泰山區貴子里致遠新村55之1號</P>
+					<p>EMAIL: 123@gmail.com</p>
+					<p>TEL: +886-1-2345-6789</p>
 					<!-- icon -->
 					<div class="icon">
 						<a href="#">
@@ -135,10 +130,12 @@
 	</div>
 	<div class="copyright">
 		<p class="">
-			Copyright&nbsp;<i class="fa-solid fa-copyright mx-2"></i><?= $Bottom->find(1)['bottom']; ?>&nbsp;|&nbsp;All Rights Reserved
+			Copyright&nbsp;<i class="fa-solid fa-copyright mx-2"></i>W&nbsp;<i class="fa-solid fa-burger"></i>&nbsp;BURGER&nbsp;|&nbsp;All Rights Reserved
 		</p>
 	</div>
 	<!-- footer end -->
+
+
 	<!-- menu邊選單 -->
 	<div class="offcanvas offcanvas-end" id="side-menu">
 		<div class="offcanvas-header">

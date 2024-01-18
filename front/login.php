@@ -1,17 +1,3 @@
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="../css/member_login.css">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Bootstrap JavaScript 和 jQuery（下拉式選單所需） -->
-	<script src="./js/jquery-1.9.1.min.js"></script>
-	
-</head>
-
-
 <?php
 // if (isset($_SESSION['login'])) {
 // 	to("back.php");
@@ -25,11 +11,7 @@
 ?>
 <br>
 <br>
-
-
-
-<div class="container border member-login">
-
+<div class="border member-login">
 		<h2 class="fw-bold text-center mt-3">會員登入</h2>
 		<div class="form-group mx-auto">
 			<div class="row mt-3">
@@ -65,13 +47,13 @@
 </div>
 <script>
 function login() {
-	$.post('../api/chk_acc.php', {
+	$.post('./api/chk_acc.php', {
 		acc: $("#acc2").val()
 	}, (res) => {
 		if (parseInt(res) == 0) {
 			alert("查無帳號")
 		} else {
-			$.post('../api/chk_pw.php', {
+			$.post('./api/chk_pw.php', {
 					acc: $("#acc2").val(),
 					pw: $("#pw2").val()
 				},

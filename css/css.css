@@ -9,7 +9,15 @@ body {
 	margin: 0;
 }
 
-.navbar-brand:hover{
+.member-login {
+	margin: auto;
+	margin-top: 10vh;
+	margin-bottom: 20vh;
+	width: 30%;
+	padding: 50px;
+}
+
+.navbar-brand:hover {
 	text-decoration: none;
 }
 
@@ -59,11 +67,12 @@ body {
 	color: white;
 }
 
-.text-none{
+.text-none {
 	text-decoration: none;
 	color: #ffffff;
 }
-.text-none:hover{
+
+.text-none:hover {
 	text-decoration: none;
 }
 
@@ -174,9 +183,9 @@ a:hover {
 	width: 100%;
 	margin: auto;
 	display: block;
-	width:400px;
-	height:400px;
-	object-fit:cover;
+	width: 400px;
+	height: 400px;
+	object-fit: cover;
 }
 
 .shop-btn {
@@ -194,11 +203,11 @@ a:hover {
 	color: white;
 }
 
-.nav-link{
+.nav-link {
 	color: #999;
 }
 
-.nav-link:hover{
+.nav-link:hover {
 	text-decoration: none;
 }
 
