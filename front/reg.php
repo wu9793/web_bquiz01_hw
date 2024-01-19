@@ -4,13 +4,13 @@
         <div class="row mt-3">
             <div class="col">
                 <label class="label" for="acc">帳號</label><span style="color: red;">&nbsp;*&nbsp;</span>
-                <input class="form-control w-100" name="acc" placeholder="輸入您的帳號" type="text" id="acc">
+                <input class="form-control w-100" name="acc" placeholder="輸入您的帳號" type="text" id="acc3">
             </div>
         </div>
         <div class="row mt-3">
             <div class="col">
                 <label class="label" for="pw">密碼</label><span style="color: red;">&nbsp;*&nbsp;</span>
-                <input class="form-control  w-100" name="pw" type="password" placeholder="輸入您的密碼" id="pw">
+                <input class="form-control  w-100" name="pw" type="password" placeholder="輸入您的密碼" id="pw3">
             </div>
         </div>
         <div class="row mt-3">
@@ -50,8 +50,8 @@
 <script>
     function reg() {
         let user = {
-            acc: $("#acc").val(),
-            pw: $("#pw").val(),
+            acc: $("#acc3").val(),
+            pw: $("#pw3").val(),
             pw2: $("#pw2").val(),
             email: $("#email").val(),
             name: $("#name").val()
