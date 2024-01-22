@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-01-18 06:26:52
+-- 產生時間： 2024-01-22 09:36:17
 -- 伺服器版本： 10.4.28-MariaDB
 -- PHP 版本： 8.2.4
 
@@ -80,8 +80,9 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`id`, `acc`, `pw`, `name`, `email`) VALUES
 (3, 'admin', '1234', '', ''),
 (4, '1234@gmail.com', '6666', '', ''),
-(5, '6666', '6666', 'wu', 'ghcjmhgfj'),
-(6, '1234', '1234', 'bob', 'ghkmjhgk');
+(5, '0000', '0000', 'cat', 'dfhbfd@gmail.com'),
+(6, '1234', '1234', 'bob', 'ghkmjhgk'),
+(7, 'wu', '6666', 'wu', '1233');
 
 -- --------------------------------------------------------
 
@@ -288,7 +289,7 @@ CREATE TABLE `total` (
 --
 
 INSERT INTO `total` (`id`, `total`) VALUES
-(1, 22);
+(1, 27);
 
 --
 -- 已傾印資料表的索引
@@ -386,7 +387,7 @@ ALTER TABLE `ad`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `bottom`
