@@ -66,6 +66,7 @@ class DB
         } else if (is_numeric($id)) {
             $sql .= " where `id`='$id'";
         }
+       // echo $sql;
         $row = $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         return $row;
     }
