@@ -33,7 +33,7 @@ $admin=$Admin->find('user' == $_SESSION['user']);
                 <div class="d-grid gap-2">
                     <!-- button 透過 onclick 來觸發 reg()事件 -->
                     <button type="submit" class="form-control btn btn-dark" onclick="reg()">更新</button>
-                    <input type="hidden" id="id">
+                    <input type="hidden" name="id" id="id">
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 <main class="container mb-5">
     <h3 class="text-center">帳號管理</h3>
     <hr>
-    <form action="../api/edit.php" method="post">
+    <form action="./api/edit.php" method="post">
         <table class='table table-bordered text-center'>
             <tr>
                 <td>帳號</td>

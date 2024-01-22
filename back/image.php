@@ -32,7 +32,7 @@
             
             ?>
         </div>
-        <form action="../api/edit.php" method="post">
+        <form action="./api/edit.php" method="post">
         <table class='table table-bordered text-center'>
             <tr>
                 <td>商品圖片</td>

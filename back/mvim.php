@@ -2,7 +2,7 @@
     <h3 class="text-center">動畫圖片</h3>
     <hr>
     <div><input type="button" class="btn btn-outline-primary" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增動畫"></div>
-    <form action="../api/edit.php" method="post">
+    <form action="./api/edit.php" method="post">
         <table class='table table-bordered text-center mt-3'>
             <tr>
                 <td>動畫圖片</td>
