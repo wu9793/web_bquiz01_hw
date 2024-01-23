@@ -9,7 +9,7 @@
         </div>
         <div class="col-8">
             <?php
-            $title=$Title->find(['sh'=>1]);
+            $title = $Title->find(['sh' => 1]);
             ?>
             <a class="" title="<?= $title['text']; ?>" href="index.php">
                 <div class="bg-img" style="background-image:url('./img/<?= $title['img']; ?>');"></div>
@@ -119,8 +119,11 @@
         </div>
     </div>
 </div>
+<br>
+<br>
 
 <!-- list group -->
+
 <!-- <h2>NEWS</h2>
 <div class="list-group mt-3">
     <?php
