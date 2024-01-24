@@ -123,7 +123,146 @@
 <br>
 
 <!-- list group -->
+<div class="container h-80 mt-5">
+  <!-- swiper 開始 -->
+  <div class="swiper mt-3" id="comment-swiper">
+    <!-- swiper-wrapper 容器 -->
+    <ul class="swiper-wrapper">
+      <!-- 要作為輪播子元素的區塊，需要加上 swiper-slide 這個 class，
+           其餘 CSS 樣式則依照需求自行調整 -->
+      <li class="swiper-slide list-unstyled card position-relative border-0 card-shadow">
+        <div class="card-body pt-5 px-4">
+          <div class="img-frame mb-3 shadow d-flex justify-content-center align-items-center">
+            <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/chatTalker_images/user01.jpg?raw=true" class="w-100 rounded rounded-3" alt="推薦人圖片">
+          </div>
+          <p class="mb-4">原來聊天機器人可以這麼有人性！團隊有完整的行銷計畫提供數位整合，讓我們公司的產品用更活潑的方式讓使用者認識。</p>
+          <div class="card-footer px-0 bg-transparent">
+            <p class="mb-1 fw-bold">清心寡慾設計公司</p>
+            <div class="d-flex justify-content-between">
+              <p class="mb-0">Lina 執行長</p>
+              <ul class="list-unstyled d-flex lh-1">
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="swiper-slide list-unstyled card position-relative border-0 card-shadow">
+        <div class="card-body pt-5 px-4">
+          <div class="img-frame position-absolute shadow rounded-circle d-flex justify-content-center align-items-center overflow-hidden">
+            <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/chatTalker_images/user02.jpg?raw=true" class="w-100" alt="推薦人圖片">
+          </div>
+          <p class="mb-4">團隊很積極的協助行銷追蹤，針對機器人進行優化，讓我們一個月內提高10000個追蹤者，客戶體驗回饋很正面！</p>
+          <div class="card-footer px-0 bg-transparent">
+            <p class="mb-1 fw-bold">subwhat 行銷公司</p>
+            <div class="d-flex justify-content-between">
+              <p class="mb-0">Zoe 活動長</p>
+              <ul class="list-unstyled d-flex lh-1">
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="swiper-slide list-unstyled card position-relative border-0 card-shadow">
+        <div class="card-body pt-5 px-4">
+          <div class="img-frame position-absolute shadow rounded-circle d-flex justify-content-center align-items-center overflow-hidden">
+            <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/chatTalker_images/user03.jpg?raw=true" class="w-100" alt="推薦人圖片">
+          </div>
+          <p class="mb-4">經營了好久的IG，一直無法提升粉絲數，和團隊合作後，才知道可以用聊天機器人玩這麼豐富的行銷活動！太讚拉～</p>
+          <div class="card-footer px-0 bg-transparent">
+            <p class="mb-1 fw-bold">油土伯</p>
+            <div class="d-flex justify-content-between">
+              <p class="mb-0">HowBig</p>
+              <ul class="list-unstyled d-flex lh-1">
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="swiper-slide list-unstyled card position-relative border-0 card-shadow">
+        <div class="card-body pt-5 px-4">
+          <div class="img-frame position-absolute shadow rounded-circle d-flex justify-content-center align-items-center overflow-hidden">
+            <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/chatTalker_images/user03.jpg?raw=true" class="w-100" alt="推薦人圖片">
+          </div>
+          <p class="mb-4">經營了好久的IG，一直無法提升粉絲數，和團隊合作後，才知道可以用聊天機器人玩這麼豐富的行銷活動！太讚拉～</p>
+          <div class="card-footer px-0 bg-transparent">
+            <p class="mb-1 fw-bold">油土伯</p>
+            <div class="d-flex justify-content-between">
+              <p class="mb-0">HowBig</p>
+              <ul class="list-unstyled d-flex lh-1">
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+                <li class="px-1">
+                  <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon_star.svg" alt="評價星星">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <!-- swiper 套件的分頁圓點 -->
+    <div class="swiper-pagination position-static"></div>
+  </div>
+  <!-- swiper 結束 -->
+</div>
 
+<!-- 載入 Swiper 套件 -->
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <!-- <h2>NEWS</h2>
 <div class="list-group mt-3">
     <?php
