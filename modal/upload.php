@@ -9,6 +9,9 @@
                 case "image":
                     echo "<h3 class='text-center mt-3'>校園映像圖片</h3>";
                     break;
+                case "news":
+                    echo "<h3 class='text-center mt-3'>最新消息圖片</h3>";
+                    break;
             }
             ?>
             <hr>

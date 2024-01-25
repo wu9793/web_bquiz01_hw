@@ -9,6 +9,7 @@ p {
 
 .container {
     max-width: 1120px;
+    /* max-height: 80vh; */
     padding-right: 16px;
     padding-left: 16px;
     margin-right: auto;
@@ -48,6 +49,7 @@ p {
 .img-frame {
     width: 300px;
     height: 300px;
+    border-radius: 10px;
     /*  調整人物頭像位置 */
     /* top: -50px; */
 }
