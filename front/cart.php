@@ -34,7 +34,9 @@ if (!isset($_SESSION['user'])) {
                 <td>NT$<?= $row['price']; ?></td>
                 <td><?= $qt; ?></td>
                 <td><?= $row['price'] * $qt; ?></td>
-                <td><i class="fa-solid fa-trash-can" onclick="delCart(<?= $id; ?>)"></i></td>
+                <td>
+                    <span onclick="delCart(<?= $id; ?>)"><i class="fa-solid fa-trash-can"></i></span>
+                </td>
             </tr>
         <?php
         }
@@ -51,3 +53,10 @@ if (!isset($_SESSION['user'])) {
         </div>
     </div>
 </div>
+<script>
+    function delCart(id){
+    $.post("./api/del_cart.php",{id},()=>{
+        location.href='?do=cart';
+    })
+}
+</script>
