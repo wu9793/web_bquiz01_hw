@@ -30,8 +30,8 @@
                             <div class="card-body">
                                 <h5 class="card-title mt-2 fw-bold"><?= $img['title']; ?></h5>
                                 <p class="card-text mt-2 price">NT$<?= $img['price']; ?></p>
-                                <input class="form-control w-100 mb-2" type="number" name="qt" id="qt" value="1">
-                                <button class="btn btn-outline-dark w-100"  onclick="addToCart(<?=$img['id'];?>)">加入購物車</button>
+                                <input class="form-control w-100 mb-2" type="number" name="qt_<?=$img['id']?>" id="qt_<?=$img['id']?>" value="1">
+                                <button class="btn btn-outline-dark w-100"  onclick="addToCart(<?=$img['id']?>)">加入購物車</button>
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
 <script>
 
     function addToCart(id) {
-        let qt=$("#qt").val()
+        let qt=$("#qt_" + id).val()
         location.href=`?do=cart&id=${id}&qt=${qt}`
     }
 

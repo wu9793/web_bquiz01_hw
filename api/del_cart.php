@@ -1,5 +1,5 @@
 <?php
-include_once "./api/db.php";
+session_start();
 
 unset($_SESSION['cart'][$_POST['id']]);
 ?>
