@@ -1,4 +1,4 @@
-<div class="container-fluid vh-100">
+<div id="title" class="container-fluid vh-100" style="background-color: #d9d6cf;">
   <div class="row h-100">
     <div class="col-4 d-flex justify-content-center align-items-center">
       <p class="slogn fw-bolder border-start border-light pl-3 border-5">
@@ -21,7 +21,7 @@
 <!-- about -->
 <div class="container-fluid h-80" style="background-color: #E0E0E0;">
   <div class="row h-80">
-    <div class="col-sm col-8 mx-auto w-50 h-80 p-sm-5">
+    <div class="col-sm col-8 mx-auto w-50 h-80 p-sm-5" data-bottom-top="transform:translateY(-80px);opacity:0" data-center="transform:translateY(0px);opacity:1">
       <p class="about text-light fw-bolder pt-1">
         ABOUT US
       </p>

@@ -7,6 +7,55 @@ body {
 	width: 100%;
 	height: 100vh;
 	margin: 0;
+	font-family: "微軟正黑體"
+}
+
+#navbar {
+	height: 10vh;
+}
+
+nav.navbar.navbar-expand-lg.fixed-top.p-0 {
+	/* border-bottom: solid 1px #f3f3f1; */
+	transition: 0.5s;
+}
+
+nav.navbar.navbar-expand-lg.fixed-top.p-0.navbar-gb {
+	background-color: white;
+	box-shadow: 2px 2px 15px rgba(51,51,51, 0.8);
+}
+
+nav {
+	.hover {
+		color: white;
+		transition: 0.5s
+	}
+
+	.hover:hover {
+		color: #e0a297 !important;
+	}
+
+	.logo {
+		font-size: 40px;
+		font-weight: bold;
+		color: white;
+		transition: 0.5s
+	}
+
+	.fa-burger {
+		transition: 0.5s
+	}
+
+	.navbar-nav {
+		margin-left: auto;
+	}
+
+	.navbar-brand{
+		margin-left: 30px;
+	}
+	
+	.navbar-brand:hover {
+		text-decoration: none;
+	}
 }
 
 .member-login {
@@ -17,9 +66,6 @@ body {
 	padding: 50px;
 }
 
-.navbar-brand:hover {
-	text-decoration: none;
-}
 
 
 .vh-100 {
@@ -38,21 +84,18 @@ body {
 	width: 80%;
 	height: 80%;
 	margin: auto;
-	margin-top: 7vh;
+	margin-top: 15vh;
 	align-items: center;
 	background-color: #999;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
 	border-radius: 50px;
+	box-shadow: 2px 2px 15px rgba(51,51,51, 0.8);
 }
 
-/* .main{
-	flex-grow: 1;
-	height: 100vh;
-} */
 
-.shop-btn{
+.shop-btn {
 	/* width: 100%; */
 	height: 20vh;
 	text-align: center;
@@ -86,6 +129,8 @@ body {
 
 .slogn {
 	font-size: 90px;
+	color: #ffffff;
+	padding-left: 20px;
 	/* border: 5px solid #ccc; */
 }
 
