@@ -35,7 +35,7 @@
       </a>
     </div>
     <div class="col-lg-4 col-md-2 col-sm-12 h-100">
-      <img src="../img/18.jpg" class="about-img" data-0="transform: translateX(100px);opacity:0" data-460="transform: translateX(0);opacity:1">
+      <img src="./img/18.jpg" class="about-img" data-0="transform: translateX(100px);opacity:0" data-460="transform: translateX(0);opacity:1">
     </div>
   </div>
 </div>
