@@ -36,9 +36,15 @@ p {
 }
 
 /* 將底部 pagination 分頁的 active 狀態改為想要的樣式 */
+.swiper-pagination-bullet{
+    background: var(--swiper-theme-color) !important;
+    opacity: 1 !important;
+    transition:0.5s ;
+}
 .swiper-pagination-bullet-active {
-    width: 20px;
-    border-radius: 8px;
+    padding:0 8px;
+    border-radius: 6px;
+    transition:0.5s ;
 }
 
 /* 讓分頁圓點移至下方 */

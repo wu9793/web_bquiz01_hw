@@ -1,18 +1,18 @@
-<div id="title" class="container-fluid vh-100" style="background-color: #d9d6cf;">
+<div id="title" class="container-fluid vh-100 main-bg">
   <div class="row h-100">
-    <div class="col-4 d-flex justify-content-center align-items-center">
-      <p class="slogn fw-bolder border-start border-light pl-3 border-5">
+    <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
+      <p class="slogn fw-bolder border-start border-light border-5" data-0="transform: translateY(100px)" data-400="transform: translateY(-50px)">
         Super <br>
         Delicious <br>
         BURGER
       </p>
     </div>
-    <div class="col-8">
+    <div class="col-lg-8 col-md-6 col-sm-12">
       <?php
       $title = $Title->find(['sh' => 1]);
       ?>
-      <a class="" title="<?= $title['text']; ?>" href="index.php">
-        <div class="bg-img" style="background-image:url('./img/<?= $title['img']; ?>');"></div>
+      <a class="" href="index.php">
+        <img src="./img/<?= $title['img']; ?>" class="bg-img d-flex align-items-center" alt="">
       </a>
     </div>
   </div>
@@ -21,12 +21,12 @@
 <!-- about -->
 <div class="container-fluid h-80" style="background-color: #E0E0E0;">
   <div class="row h-80">
-    <div class="col-sm col-8 mx-auto w-50 h-80 p-sm-5" data-bottom-top="transform:translateY(-80px);opacity:0" data-center="transform:translateY(0px);opacity:1">
+    <div class="col-lg-8 col-md-10 col-sm-12 mx-auto w-50 h-80 p-sm-5" data-bottom-top="transform:translateY(-80px);opacity:0" data-center="transform:translateY(0px);opacity:1">
       <p class="about text-light fw-bolder pt-1">
         ABOUT US
       </p>
       <p class="about-us text-dark fw-bolder">關於我們</p>
-      <p class="text-dark pt-5 pb-5">
+      <p class="text-dark pt-3 pb-5 fs-4 fs-md-5 fs-lg-6">
         每個W.burger漢堡都是經過精心製作的手工藝品。我們堅持使用最優質的肉類和新鮮的當地食材，以確保每一口都是絕對美味。<br>
         我們不只是提供美味的漢堡，更是創造一個愉快的用餐體驗。我們的團隊充滿熱情，始終以最高水準的服務迎接每一位顧客。
       </p>
@@ -34,34 +34,39 @@
         <button type="button" class="btn btn-lg btn-outline-dark rounded-5">查看更多</button>
       </a>
     </div>
-    <div class="col-4 about-img"></div>
+    <div class="col-lg-4 col-md-2 col-sm-12 h-100">
+      <img src="../img/18.jpg" class="about-img" data-0="transform: translateX(100px);opacity:0" data-460="transform: translateX(0);opacity:1">
+    </div>
   </div>
 </div>
 <!-- about -->
 <!-- 商品 -->
 <div class="container-fluid h-80 postwall">
-  <p class="sold text-dark fw-bolder pt-5 pb-3">
-    Shop Collections
-  </p>
+  <div data-bottom-top="transform: scale(1.5);opacity: 0" data-center="transform: scale(1);opacity: 1">
+    <p class="sold text-dark fw-bolder pt-4">
+      Shop Collections
+    </p>
+    <hr class="white mb-3">
+  </div>
   <div class="row h-75 mx-auto align-items-center w-75">
-    <div class="col-sm-4 h-75 item-box ">
+    <div class="col-lg-4 col-md-6 h-75 item-box">
       <a href="?do=images"><img src="./img/13.jpg" class="rounded-5 post"></a>
-      <p>Burger / 漢堡</p>
+      <p class="fs-4 fs-md-5 fs-lg-6">Burger / 漢堡</p>
     </div>
-    <div class="col-sm-4 h-75 item-box ">
+    <div class="col-lg-4 col-md-6 h-75 item-box">
       <a href="?do=images"><img src="./img/17.jpg" class="rounded-5 post"></a>
-      <p>Fried Food / 炸物</p>
+      <p class="fs-4 fs-md-5 fs-lg-6">Fried Food / 炸物</p>
     </div>
-    <div class="col-sm-4 h-75 item-box ">
+    <div class="col-lg-4 col-md-12 h-75 item-box">
       <a href="?do=images"><img src="./img/16.jpg" class="rounded-5 post"></a>
-      <p>Drink / 飲品</p>
+      <p class="fs-4 fs-md-5 fs-lg-6">Drink / 飲品</p>
     </div>
   </div>
 </div>
 <!-- 商品 -->
 <!-- ins -->
 <div class="row align-items-center mx-auto" style="background-color: #BEBEBE;" id="sns">
-  <div class="col-sm-7 col-12 text-light mx-auto text-light fw-bolder fs-1 ps-4 ps-sm-5 pt-3">
+  <div class="col-lg-7 col-md-12 text-light mx-auto text-light fw-bolder fs-1 ps-4 ps-sm-5 pt-3">
     Join Our Community For Any Latest Update.
     <div class="fs-5 text-dark d-sm-block d-none">
       我們追求卓越、創新和樂趣。如果你對美味食物充滿熱情，並渴望在一個充滿活力的環境中工作，我們歡迎你加入我們的大家庭！<br>
@@ -94,7 +99,7 @@
       </button>
     </div>
   </div>
-  <div class="col-sm-5 align-items-center mt-3 mb-4">
+  <div class="col-lg-5 col-md-12 align-items-center mt-3 mb-4">
     <div id="carouselExampleControls" class="carousel slide p-sm-5" data-bs-ride="carousel">
       <div class="carousel-inner w-100">
         <?php
@@ -122,10 +127,10 @@
 <!-- ins -->
 
 <!-- list swiper -->
-<div class="container h-80 mt-5">
+<div class="container h-80 mt-5" data-bottom-top="transform:translateY(80px);opacity:0" data-center="transform:translateY(0px);opacity:1">
   <h2 class="fw-bold">活動消息</h2>
   <!-- swiper 開始 -->
-  <div class="swiper mt-3" id="comment-swiper">
+  <div class="swiper" id="comment-swiper">
     <!-- swiper-wrapper 容器 -->
     <ul class="swiper-wrapper">
       <!-- 要作為輪播子元素的區塊，需要加上 swiper-slide 這個 class，
@@ -153,7 +158,7 @@
       ?>
     </ul>
     <!-- swiper 套件的分頁圓點 -->
-    <div class="swiper-pagination position-static"></div>
+    <div class="swiper-pagination position-static "></div>
   </div>
   <!-- swiper 結束 -->
 </div>
@@ -181,7 +186,7 @@
         break; // Break out of the loop after 6 iterations
       }
     ?>
-      <div class="col-4">
+      <div class="col-lg-4 col-md-6 col-sm-12">
         <div id="ssaa<?= $idx; ?>" class="card d-flex p-2 pb-0 rounded-4 border-0">
           <img src="./img/<?= $img['img']; ?>" class="card-img-top rounded-4 card-img">
           <div class="card-body">
