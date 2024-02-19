@@ -51,7 +51,8 @@
                             <div class="card-body">
                                 <h5 class="card-title mt-2 fw-bold"><?= $fried['title']; ?></h5>
                                 <p class="card-text mt-2 price">NT$<?= $fried['price']; ?></p>
-                                <button class="btn btn-outline-dark w-100">加入購物車</button>
+                                <input class="form-control w-100 mb-2" type="number" name="qt_<?=$fried['id']?>" id="qt_<?=$fried['id']?>" value="1">
+                                <button class="btn btn-outline-dark w-100"  onclick="addToCart(<?=$fried['id']?>)">加入購物車</button>
                             </div>
                         </div>
                     </div>
@@ -73,7 +74,8 @@
                             <div class="card-body">
                                 <h5 class="card-title mt-2 fw-bold"><?= $drink['title']; ?></h5>
                                 <p class="card-text mt-2 price">NT$<?= $drink['price']; ?></p>
-                                <button class="btn btn-outline-dark w-100">加入購物車</button>
+                                <input class="form-control w-100 mb-2" type="number" name="qt_<?=$drink['id']?>" id="qt_<?=$drink['id']?>" value="1">
+                                <button class="btn btn-outline-dark w-100"  onclick="addToCart(<?=$drink['id']?>)">加入購物車</button>
                             </div>
                         </div>
                     </div>
