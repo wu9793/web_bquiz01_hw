@@ -156,13 +156,13 @@ nav {
 	}
 }
 
-.about {
+.fs-90 {
 	font-size: 90px;
 }
 @media (max-width: 991.98px) {
 
 	/* Adjust font size for medium devices (tablets) */
-	.about {
+	.fs-90 {
 		font-size: 60px;
 	}
 }
@@ -170,18 +170,18 @@ nav {
 @media (max-width: 767.98px) {
 
 	/* Adjust font size for small devices (phones) */
-	.about {
+	.fs-90 {
 		font-size: 40px;
 	}
 }
 
-.about-us {
+.fs-50 {
 	font-size: 50px;
 }
 @media (max-width: 767.98px) {
 
 	/* Adjust font size for small devices (phones) */
-	.about-us {
+	.fs-50 {
 		font-size: 30px;
 	}
 }
@@ -213,7 +213,7 @@ nav {
 	height: 100%;
 	margin: auto;
 	background-color: #999;
-	background-image: url(../img/elevate-snnhGYNqm44-unsplash.jpg);
+	background-image: url(../img/thanos-pal-Djs02AtkOm4-unsplash.jpg);
 	/* background-attachment: fixed; */
 	background-size: cover;
 	background-repeat: no-repeat;

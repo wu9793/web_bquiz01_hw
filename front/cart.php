@@ -4,9 +4,8 @@ if (isset($_GET['id'])) {
 }
 if (!isset($_SESSION['user'])) {
     to("?do=login");
-
-    exit();
 }
+
 ?>
 
 <br>
@@ -14,9 +13,6 @@ if (!isset($_SESSION['user'])) {
     <h2 class="fw-bold">購物車</h2>
     <br>
     <table class='table table-bordered text-center'>
-        <button id="sumBtn" type="button" class="btn btn-danger d-none ">
-            合計
-        </button>
         <tr>
             <td>商品圖片</td>
             <td>商品名稱</td>
@@ -26,6 +22,7 @@ if (!isset($_SESSION['user'])) {
             <td style="width: 5%;"></td>
         </tr>
         <?php
+        $sum = 0;
         foreach ($_SESSION['cart'] as $id => $qt) {
             $row = $Image->find($id);
         ?>
@@ -36,22 +33,24 @@ if (!isset($_SESSION['user'])) {
                 <td><?= $row['title']; ?></td>
                 <td>NT$<?= $row['price']; ?></td>
                 <td>
-                    <input type="number" class="quantity form-control" data-id="<?= $id; ?>" max="20" min="1" value="<?= $qt; ?>">
+                    <!-- <input type="number" class="quantity form-control" data-id="<?= $id; ?>" max="20" min="1" value="<?= $qt; ?>"> -->
+                    <?= $qt; ?>
                 </td>
-                <td class="myTotal">NT$<?= (int)$row['price'] * (int)$qt; ?></td>
+                <td class="myTotal">NT$<?= $row['price'] * $qt; ?></td>
                 <td>
                     <span onclick="delCart(<?= $id; ?>)"><i class="fa-solid fa-trash-can"></i></span>
                 </td>
             </tr>
         <?php
+            $sum += $row['price'] * $qt;
         }
         ?>
     </table>
     <hr>
     <div class="row">
         <div class="col">
-            <div class="text-end bg-light">
-                合計 : NT$ <span id="mySum" class="display-4">0</span>
+            <div class="text-end bg-light pe-3">
+                合計 : NT$ <span class="display-4"><?= $sum; ?></span>
             </div>
         </div>
     </div>
@@ -63,7 +62,7 @@ if (!isset($_SESSION['user'])) {
             </a>
         </div>
         <div class="col">
-            <button type="button" class="btn btn-dark" style="float:right;">結帳</button>
+            <button type="button" class="btn btn-dark" style="float:right;" onclick="location.href='?do=checkout'">結帳</button>
         </div>
     </div>
 </div>
@@ -72,49 +71,7 @@ if (!isset($_SESSION['user'])) {
         $.post("./api/del_cart.php", {
             id
         }, () => {
-            location.href = 'index.php?do=cart';
+            location.href = "?do=cart";
         })
     }
-
-    $(document).ready(function() {
-        function sumFun() {
-            console.log('sumBtn ok');
-            let myTotal = $('.myTotal');
-            let getMyTotalCount = myTotal.length;
-            console.log('myTotal', myTotal);
-            let sum = 0;
-            myTotal.each(function(index, value) {
-                console.log('index', index);
-                console.log('value', value);
-                sum = sum + Number($(value).text());
-            });
-            console.log('final sum', sum);
-            mySum.text(sum);
-        }
-
-        const mySum = $('#mySum');
-        const sumBtn = $('#sumBtn');
-
-        //sumBtn click
-        sumBtn.click(function(e) {
-            sumFun();
-        });
-
-        addQuantity = $('.quantity').last();
-
-        sumFun();
-
-        // addQuantity
-        addQuantity.change(function(e) {
-            let getQuantity = Number($(this).val());
-            let closestQuantityTr = $(this).parent().parent().parent();
-            let findTotal = closestQuantityTr.find('.myTotal');
-            let price = parseFloat(closestQuantityTr.find('.price').text().replace('NT$', ''));
-            let total = getQuantity * price;
-            findTotal.text('NT$' + total);
-
-            sumFun();
-        });
-
-    });
 </script>

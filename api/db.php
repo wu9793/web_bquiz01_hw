@@ -166,6 +166,7 @@ $Menu=new DB('menu');
 $About=new DB('about');
 $Fried=new DB('fried');
 $Drink=new DB('drink');
+$Order=new DB('orders');
 
 
 
