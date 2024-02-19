@@ -155,7 +155,7 @@
 				$mainmu = $Menu->all(['sh' => 1, 'menu_id' => 0]);
 				foreach ($mainmu as $main) {
 				?>
-					<a href="<?= $main['href']; ?>" class="list-group-item list-group-item-action">
+					<a href="<?= $main['href']; ?>" class="list-group-item list-group-item-action fs-5">
 						<?= $main['text']; ?>
 					</a>
 				<?php
