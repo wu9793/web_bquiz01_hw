@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-02-02 09:20:28
+-- 產生時間： 2024-02-20 09:35:24
 -- 伺服器版本： 10.4.28-MariaDB
 -- PHP 版本： 8.2.4
 
@@ -39,25 +39,6 @@ CREATE TABLE `about` (
 
 INSERT INTO `about` (`id`, `story`, `item`) VALUES
 (1, '在一個充滿活力和熱情的小鎮裡，有一家名叫「W.burger」的漢堡店，它不僅僅是一家餐廳，更是一種生活方式的象徵。W.burger的故事始於一位年輕且充滿創意的廚師，他熱愛美味，對生活充滿激情。\r\n\r\n美味的起源\r\nW.burger的創始人，馬克·漢密爾頓，是一位對美食有著無窮熱愛的廚師。他在全球旅行中品嚐了各種文化的美食，但最終，他發現最令人難以忘懷的就是家鄉的味道。馬克回到家鄉，將他的熱情注入了每一個漢堡的製作過程中。\r\n\r\n新鮮與創新\r\nW.burger以新鮮和創新為品牌的核心價值。我們不僅注重使用當地新鮮食材，更堅持保持原始的味道和品質。每一個漢堡都是獨一無二的藝術品，代表著馬克對美味的堅持和對食材的尊重。\r\n\r\n社區的力量\r\nW.burger不僅僅是一家餐廳，更是社區的一部分。我們積極參與當地社區活動，支持本地農產品和當地企業。我們的員工不僅是廚師和服務員，更是社區的一份子，共同創造一個充滿活力的社區。\r\n\r\n擴張與分享\r\n隨著W.burger的成功，我們將這份熱情和美味帶給更多的地方。我們的擴張計劃不僅僅是為了開設更多分店，更是為了將W.burger的品味和品牌故事分享給更廣泛的社群。', '「W.burger」\r\n不僅僅是一頓美味的漢堡，\r\n更是一場對美味、創新和社區的熱情之旅。\r\n讓我們一同品味生活，分享美味，蓬勃生活！');
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `ad`
---
-
-CREATE TABLE `ad` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `text` text NOT NULL,
-  `sh` int(1) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `ad`
---
-
-INSERT INTO `ad` (`id`, `text`, `sh`) VALUES
-(8, 'dddddddd', 1);
 
 -- --------------------------------------------------------
 
@@ -255,6 +236,34 @@ INSERT INTO `news` (`id`, `title`, `img`, `text`, `date`, `sh`) VALUES
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `no` text NOT NULL,
+  `total` int(10) NOT NULL,
+  `acc` text NOT NULL,
+  `name` text NOT NULL,
+  `orderdate` timestamp NOT NULL DEFAULT current_timestamp(),
+  `email` text NOT NULL,
+  `tel` text NOT NULL,
+  `addr` text NOT NULL,
+  `cart` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `orders`
+--
+
+INSERT INTO `orders` (`id`, `no`, `total`, `acc`, `name`, `orderdate`, `email`, `tel`, `addr`, `cart`) VALUES
+(2, '20240219351324', 278, '0000', 'cat', '2024-02-19 07:25:17', 'dfhbfd@gmail.com', '095555555', 'rtuytduyt', 'a:2:{i:5;s:1:\"1\";i:3;s:1:\"1\";}'),
+(3, '20240219633747', 785, '1234', 'bob', '2024-02-19 07:26:05', 'ghkmjhgk', '098888888', 'kjygdcujglk,jhglk,', 'a:2:{i:12;s:1:\"1\";i:13;s:1:\"4\";}'),
+(4, '20240220642939', 467, '0000', 'cat', '2024-02-20 06:05:46', 'dfhbfd@gmail.com', '096666666', 'rtuytduyt', 'a:2:{i:10;s:1:\"1\";i:12;s:1:\"2\";}');
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `titles`
 --
 
@@ -290,7 +299,7 @@ CREATE TABLE `total` (
 --
 
 INSERT INTO `total` (`id`, `total`) VALUES
-(1, 35);
+(1, 38);
 
 --
 -- 已傾印資料表的索引
@@ -300,12 +309,6 @@ INSERT INTO `total` (`id`, `total`) VALUES
 -- 資料表索引 `about`
 --
 ALTER TABLE `about`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `ad`
---
-ALTER TABLE `ad`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -357,6 +360,12 @@ ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `titles`
 --
 ALTER TABLE `titles`
@@ -377,12 +386,6 @@ ALTER TABLE `total`
 --
 ALTER TABLE `about`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `ad`
---
-ALTER TABLE `ad`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `admin`
@@ -431,6 +434,12 @@ ALTER TABLE `mvim`
 --
 ALTER TABLE `news`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `titles`

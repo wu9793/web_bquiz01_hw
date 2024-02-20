@@ -56,9 +56,28 @@ nav {
 	.navbar-brand:hover {
 		text-decoration: none;
 	}
+	.fa-bag-shopping{
+		position: relative;
+		z-index: 1;
+	}
+	.fa-solid.fa-circle {
+		position: absolute;
+		top: 40%;
+		left: 93%;
+		/* transform: translate(-50%, -50%); */
+		box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+		z-index: 0;
+	}
+	
+	#amount {
+		position: absolute; 
+		top: 50%; 
+		left: 50%; 
+		transform: translate(-50%, -50%); 
+		font-size: 12px; 
+	}
 }
 @media (max-width: 767.98px) {
-
 	/* Adjust font size for small devices (phones) */
 	nav.logo {
 		justify-content: center;
