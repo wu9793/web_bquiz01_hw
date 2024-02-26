@@ -192,7 +192,7 @@
           <div class="card-body">
             <h5 class="card-title mt-2 fw-bold"><?= $img['title']; ?></h5>
             <p class="card-text mt-2 price">NT$<?= $img['price']; ?></p>
-            <button class="btn btn-outline-dark w-100">加入購物車</button>
+            <button class="btn btn-outline-dark w-100" onclick="location.href='?do=cart&id=<?=$img['id'];?>&qt=1'">加入購物車</button>
           </div>
         </div>
       </div>

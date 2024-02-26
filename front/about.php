@@ -1,6 +1,6 @@
 <div class="main-bg">
     <br>
-    <div class="container-fluid vh-100" style="margin-top: 11vh;">
+    <div class="container-fluid vh-100 h-top">
         <div class="row h-100">
             <div class="col-6 d-flex flex-column align-items-center justify-content-center">
                 <h2 class="text-dark text-left fw-bolder">我們的故事</h2>

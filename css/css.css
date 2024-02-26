@@ -107,6 +107,9 @@ nav {
 .w-80 {
 	width: 90%;
 }
+.h-top{
+	margin-top: 11vh;
+}
 
 .bg-img {
 	width: 80%;
@@ -333,6 +336,12 @@ a:hover {
 .shop-btn>a {
 	text-decoration: none;
 	color: white;
+}
+
+.no-item{
+	height: 20vh;
+	background-color: #f9fafb;
+	/* align-items: center; */
 }
 
 .nav-link {

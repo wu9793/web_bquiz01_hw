@@ -1,6 +1,6 @@
 <div class="main-bg">
     <br>
-    <div class="container" style="margin-top: 11vh;">
+    <div class="container h-top">
         <h2 class="fw-bold">全部商品</h2>
         <br>
         <!-- Nav tabs -->
@@ -30,8 +30,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title mt-2 fw-bold"><?= $img['title']; ?></h5>
                                     <p class="card-text mt-2 price">NT$<?= $img['price']; ?></p>
-                                    <input class="form-control w-100 mb-2" type="number" name="qt_<?= $img['id'] ?>" id="qt_<?= $img['id'] ?>" value="1">
-                                    <button class="btn btn-outline-dark w-100" onclick="addToCart(<?= $img['id'] ?>)">加入購物車</button>
+                                    <input class="form-control w-100 mb-2" type="number" id="qt_<?= $img['id']; ?>" value="1">
+                                    <button class="btn btn-outline-dark w-100" onclick="addToCart(<?= $img['id']; ?>)">加入購物車</button>
                                 </div>
                             </div>
                         </div>
@@ -53,8 +53,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title mt-2 fw-bold"><?= $fried['title']; ?></h5>
                                     <p class="card-text mt-2 price">NT$<?= $fried['price']; ?></p>
-                                    <input class="form-control w-100 mb-2" type="number" name="qt_<?= $fried['id'] ?>" id="qt_<?= $fried['id'] ?>" value="1">
-                                    <button class="btn btn-outline-dark w-100" onclick="addToCart(<?= $fried['id'] ?>)">加入購物車</button>
+                                    <input class="form-control w-100 mb-2" type="number" name="" id="" value="1">
+                                    <button class="btn btn-outline-dark w-100" onclick="">加入購物車</button>
                                 </div>
                             </div>
                         </div>
@@ -76,8 +76,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title mt-2 fw-bold"><?= $drink['title']; ?></h5>
                                     <p class="card-text mt-2 price">NT$<?= $drink['price']; ?></p>
-                                    <input class="form-control w-100 mb-2" type="number" name="qt_<?= $drink['id']; ?>" id="qt_<?= $drink['id']; ?>" value="1">
-                                    <button class="btn btn-outline-dark w-100" onclick="addToCart(<?= $drink['id']; ?>)">加入購物車</button>
+                                    <input class="form-control w-100 mb-2" type="number" name="" id="" value="1">
+                                    <button class="btn btn-outline-dark w-100" onclick="">加入購物車</button>
                                 </div>
                             </div>
                         </div>
@@ -91,9 +91,9 @@
     </div>
 </div>
 <script>
-    function addToCart(id, qt) {
-        let qt = $("#qt_" + id).val()
-        $("./api/buycart.php", (id, qt), (amount) => {
+    function addToCart(id) {
+        let qt = $("#qt_"+id).val()
+        $("?do=cart.php", (id, qt), (amount) => {
             $("#amount").taxt(amount)
         })
     }

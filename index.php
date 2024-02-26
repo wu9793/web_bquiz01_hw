@@ -81,7 +81,7 @@
 	</div>
 	<!-- navbar -->
 	<!-- main -->
-	<div class="main">
+	<div class="main border-bottom border-dark-subtle">
 		<?php
 		$do = $_GET['do'] ?? 'main';
 		$file = "./front/{$do}.php";
@@ -93,9 +93,7 @@
 		?>
 	</div>
 	<!-- main -->
-	<br>
-	<hr>
-	</div>
+
 	<!-- footer -->
 	<div class="container-fluid">
 		<div class="container footer">

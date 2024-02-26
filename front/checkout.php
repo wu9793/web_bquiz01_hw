@@ -2,7 +2,7 @@
 $row = $Admin->find(['acc' => $_SESSION['user']]);
 ?>
 <br>
-<div class="container">
+<div class="container h-top">
     <h2 class="fw-bold">填寫資料</h2>
     <br>
     <form action="./api/order.php" method="post">
