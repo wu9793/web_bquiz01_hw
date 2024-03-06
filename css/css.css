@@ -56,9 +56,28 @@ nav {
 	.navbar-brand:hover {
 		text-decoration: none;
 	}
+	.fa-bag-shopping{
+		position: relative;
+		z-index: 1;
+	}
+	.fa-solid.fa-circle {
+		position: absolute;
+		top: 40%;
+		left: 93%;
+		/* transform: translate(-50%, -50%); */
+		box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+		z-index: 0;
+	}
+	
+	#amount {
+		position: absolute; 
+		top: 50%; 
+		left: 50%; 
+		transform: translate(-50%, -50%); 
+		font-size: 12px; 
+	}
 }
 @media (max-width: 767.98px) {
-
 	/* Adjust font size for small devices (phones) */
 	nav.logo {
 		justify-content: center;
@@ -87,6 +106,9 @@ nav {
 
 .w-80 {
 	width: 90%;
+}
+.h-top{
+	margin-top: 11vh;
 }
 
 .bg-img {
@@ -156,13 +178,13 @@ nav {
 	}
 }
 
-.about {
+.fs-90 {
 	font-size: 90px;
 }
 @media (max-width: 991.98px) {
 
 	/* Adjust font size for medium devices (tablets) */
-	.about {
+	.fs-90 {
 		font-size: 60px;
 	}
 }
@@ -170,18 +192,18 @@ nav {
 @media (max-width: 767.98px) {
 
 	/* Adjust font size for small devices (phones) */
-	.about {
+	.fs-90 {
 		font-size: 40px;
 	}
 }
 
-.about-us {
+.fs-50 {
 	font-size: 50px;
 }
 @media (max-width: 767.98px) {
 
 	/* Adjust font size for small devices (phones) */
-	.about-us {
+	.fs-50 {
 		font-size: 30px;
 	}
 }
@@ -213,7 +235,7 @@ nav {
 	height: 100%;
 	margin: auto;
 	background-color: #999;
-	background-image: url(../img/elevate-snnhGYNqm44-unsplash.jpg);
+	background-image: url(../img/thanos-pal-Djs02AtkOm4-unsplash.jpg);
 	/* background-attachment: fixed; */
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -314,6 +336,12 @@ a:hover {
 .shop-btn>a {
 	text-decoration: none;
 	color: white;
+}
+
+.no-item{
+	height: 20vh;
+	background-color: #f9fafb;
+	/* align-items: center; */
 }
 
 .nav-link {

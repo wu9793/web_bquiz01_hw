@@ -58,7 +58,7 @@ if (!isset($_SESSION['user'])) {
 	<div class="container-fluid h-100 mt-3">
 		<div class="row h-100">
 			<div class="col-sm-2 hidden-xs h-100 text-center  border-end">
-				<h2>後台管理選單</h2>
+				<h2>後台管理</h2>
 				<hr class="" style="color: black;">
 				<div class="row h-100 flex-column">
 					<div class="col-12 nav-item">
@@ -80,6 +80,11 @@ if (!isset($_SESSION['user'])) {
 							<li><a class="dropdown-item back-menu" href="?do=fried">炸物</a></li>
 							<li><a class="dropdown-item back-menu" href="?do=drink">飲品</a></li>
 						</ul>
+					</div>
+					<div class="col-12 nav-item">
+						<a class="back-menu" href="?do=order">
+							訂單管理
+						</a>
 					</div>
 					<div class="col-12 nav-item">
 						<a class="back-menu" href="?do=news">

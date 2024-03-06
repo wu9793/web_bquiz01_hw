@@ -55,7 +55,16 @@
 						<!-- 管理登入 -->
 						<a class="nav-link">
 							<button class="btn hover" type="button" data-bs-toggle="offcanvas" data-bs-target="#side-shop">
-								<i class="fa-solid fa-bag-shopping"></i>
+								<i class="fa-solid fa-cart-shopping"></i>
+								<i class="fa-solid fa-circle fa-lg">
+									<span id="amount">
+										<?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+											echo count($_SESSION['cart']);
+										} else {
+											echo 0;
+										} ?>
+									</span>
+								</i>
 							</button>
 						</a>
 					</li>
@@ -72,7 +81,7 @@
 	</div>
 	<!-- navbar -->
 	<!-- main -->
-	<div class="main">
+	<div class="main border-bottom border-dark-subtle">
 		<?php
 		$do = $_GET['do'] ?? 'main';
 		$file = "./front/{$do}.php";
@@ -84,9 +93,7 @@
 		?>
 	</div>
 	<!-- main -->
-	<br>
-	<hr>
-	</div>
+
 	<!-- footer -->
 	<div class="container-fluid">
 		<div class="container footer">
@@ -285,12 +292,14 @@
 				$("nav.navbar.navbar-expand-lg.fixed-top.p-0").addClass("navbar-gb"),
 				$("button.hover").css("color", "#6c757d"),
 				$("a.logo").css("color", "#6c757d"),
-				$(".fa-burger").css("color", "#6c757d");
+				$(".fa-burger").css("color", "#6c757d"),
+				$("#amount").css("color", "white");
 			else
 				$("nav.navbar.navbar-expand-lg.fixed-top.p-0").removeClass("navbar-gb"),
 				$("button.hover").css("color", "white"),
 				$("a.logo").css("color", "white"),
-				$(".fa-burger").css("color", "white");
+				$(".fa-burger").css("color", "white"),
+				$("#amount").css("color", "#6c757d");
 
 		});
 

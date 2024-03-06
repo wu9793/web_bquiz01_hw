@@ -22,10 +22,10 @@
 <div class="container-fluid h-80" style="background-color: #E0E0E0;">
   <div class="row h-80">
     <div class="col-lg-8 col-md-10 col-sm-12 mx-auto w-50 h-80 p-sm-5" data-bottom-top="transform:translateY(-80px);opacity:0" data-center="transform:translateY(0px);opacity:1">
-      <p class="about text-light fw-bolder pt-1">
+      <p class="fs-90 text-light fw-bolder pt-1">
         ABOUT US
       </p>
-      <p class="about-us text-dark fw-bolder">關於我們</p>
+      <p class="fs-50 text-dark fw-bolder">關於我們</p>
       <p class="text-dark pt-3 pb-5 fs-4 fs-md-5 fs-lg-6">
         每個W.burger漢堡都是經過精心製作的手工藝品。我們堅持使用最優質的肉類和新鮮的當地食材，以確保每一口都是絕對美味。<br>
         我們不只是提供美味的漢堡，更是創造一個愉快的用餐體驗。我們的團隊充滿熱情，始終以最高水準的服務迎接每一位顧客。
@@ -44,7 +44,7 @@
 <div class="container-fluid h-80 postwall">
   <div data-bottom-top="transform: scale(1.5);opacity: 0" data-center="transform: scale(1);opacity: 1">
     <p class="sold text-dark fw-bolder pt-4">
-      Shop Collections
+      SHOP COLLECTIONS
     </p>
     <hr class="white mb-3">
   </div>
@@ -126,9 +126,9 @@
 </div>
 <!-- ins -->
 
-<!-- list swiper -->
+<!-- list swiper 活動消息-->
 <div class="container h-80 mt-5" data-bottom-top="transform:translateY(80px);opacity:0" data-center="transform:translateY(0px);opacity:1">
-  <h2 class="fw-bold">活動消息</h2>
+  <h2 class="fw-bold fs-50">活動消息</h2>
   <!-- swiper 開始 -->
   <div class="swiper" id="comment-swiper">
     <!-- swiper-wrapper 容器 -->
@@ -175,7 +175,7 @@
 <br>
 <!-- 商品 -->
 <div class="container">
-  <h2 class="fw-bold">美味漢堡</h2>
+  <h2 class="fw-bold fs-50">美味漢堡</h2>
   <br>
   <div class="card-group row">
     <?php
@@ -192,7 +192,7 @@
           <div class="card-body">
             <h5 class="card-title mt-2 fw-bold"><?= $img['title']; ?></h5>
             <p class="card-text mt-2 price">NT$<?= $img['price']; ?></p>
-            <button class="btn btn-outline-dark w-100">加入購物車</button>
+            <button class="btn btn-outline-dark w-100" onclick="location.href='?do=cart&id=<?=$img['id'];?>&qt=1'">加入購物車</button>
           </div>
         </div>
       </div>
