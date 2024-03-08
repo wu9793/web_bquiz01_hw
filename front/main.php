@@ -1,7 +1,7 @@
 <div id="title" class="container-fluid vh-100 main-bg">
   <div class="row h-100">
     <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
-      <p class="slogn fw-bolder border-start border-light border-5" data-0="transform: translateY(100px)" data-400="transform: translateY(-50px)">
+      <p class="slogn fw-bolder border-start border-light border-5" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" data-0="transform: translateY(100px)" data-400="transform: translateY(-50px)">
         Super <br>
         Delicious <br>
         BURGER
@@ -212,3 +212,4 @@
     </div>
   </div>
 </div>
+<br>
