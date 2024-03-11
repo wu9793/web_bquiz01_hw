@@ -1,17 +1,14 @@
-function lo(x)
-{
+function lo(x) {
 	location.replace(x)
 }
-function op(x,y,url)
-{
+function op(x, y, url) {
 	$(x).fadeIn()
-	if(y)
-	$(y).fadeIn()
-	if(y&&url)
-	$(y).load(url)
+	if (y)
+		$(y).fadeIn()
+	if (y && url)
+		$(y).load(url)
 }
-function cl(x)
-{
+function cl(x) {
 	$(x).fadeOut();
 }
 
@@ -24,9 +21,9 @@ function login() {
 			alert("查無帳號")
 		} else {
 			$.post('./api/chk_pw.php', {
-					acc: $("#acc").val(),
-					pw: $("#pw").val()
-				},
+				acc: $("#acc").val(),
+				pw: $("#pw").val()
+			},
 				(res) => {
 					if (parseInt(res) == 1) {
 						if ($("#acc").val() == 'admin') {
@@ -42,8 +39,18 @@ function login() {
 	})
 }
 
-function del(table,id){
-    $.post("./api/del.php",{table,id},()=>{
-        location.reload();
-    })
+
+function delCart(id) {
+	$.post("./api/del_cart.php", {
+		id
+	}, () => {
+		location.href = "?do=cart";
+	})
+}
+
+
+function del(table, id) {
+	$.post("./api/del.php", { table, id }, () => {
+		location.reload();
+	})
 }

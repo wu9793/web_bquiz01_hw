@@ -132,12 +132,13 @@ nav {
 }
 
 
-.shop-btn {
-	/* width: 100%; */
-	height: 20vh;
+.shopbtn {
+	width: 100%;
+	height: 5vh;
 	text-align: center;
 	background-color: #4a4a4a;
-	border-radius: 0;
+	color: rgb(200,200,200);
+	align-items: center;
 }
 
 .more-new {

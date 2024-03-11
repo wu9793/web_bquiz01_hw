@@ -54,7 +54,7 @@
 					<li class="nav-item px-3">
 						<!-- 管理登入 -->
 						<a class="nav-link">
-							<button class="btn hover" type="button" data-bs-toggle="offcanvas" data-bs-target="#side-shop">
+							<button class="btn hover" type="button" onclick="location.href = '?do=cart'">
 								<i class="fa-solid fa-cart-shopping"></i>
 								<i class="fa-solid fa-circle fa-lg">
 									<span id="amount">
@@ -254,20 +254,6 @@
 
 	</div>
 	<!-- 登入 -->
-
-	<!-- 購物車 -->
-	<div class="offcanvas offcanvas-end" id="side-shop">
-		<div class="offcanvas-header">
-			<h2 class="fw-bold mb-5 text-center mt-5">購物車</h2>
-			<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-		</div>
-		<div class="offcanvas-body row">
-			<div class="shop-btn col w-100 position-absolute bottom-0 end-0">
-				<a href="?do=cart">前往結帳</a>
-			</div>
-		</div>
-	</div>
-	<!-- 購物車 -->
 
 	<!-- 邊選單 end -->
 

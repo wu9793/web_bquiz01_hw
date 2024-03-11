@@ -96,12 +96,3 @@ if (!isset($_SESSION['user'])) {
         ?>
     </div>
 </div>
-<script>
-    function delCart(id) {
-        $.post("./api/del_cart.php", {
-            id
-        }, () => {
-            location.href = "?do=cart";
-        })
-    }
-</script>
