@@ -91,10 +91,41 @@
     </div>
 </div>
 <script>
-    function addToCart(id) {
-        let qt = $("#qt_"+id).val()
-        $("?do=cart.php", (id, qt), (amount) => {
-            $("#amount").taxt(amount)
-        })
-    }
+    // function addToCart(id,qt) {
+    //     let qt = $("#qt_" + id).val()
+    //     $.post("?do=cart.php", {id, qt}, (amount) => {
+    //         $("#amount").text(amount)
+    //     })
+    // }
+//     function addToCart(id,qt) {
+//     let qt = $("#qt_"+id).val();
+//     $.post("?do=cart.php", {id, qt}, (amount)=> {
+//         $("#amount").text(amount);
+//     });
+// }
+function addToCart(id) {
+
+    let qt = $("#qt_"+id).val();
+
+    $.ajax({
+        url: '?do=cart',
+        type: 'GET',
+        data: {
+            id: id,
+            qt: qt
+        },
+        success: function(response) {
+            // Handle success response here
+            console.log('Item added to cart successfully');
+            // Optionally, you can redirect to another page after successful addition
+            // window.location.href = 'success_page.php';
+        },
+        error: function(xhr, status, error) {
+            // Handle error response here
+            console.error('Error adding item to cart:', error);
+        }
+    });
+}
+
+
 </script>

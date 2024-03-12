@@ -2,6 +2,18 @@
 if (isset($_GET['id'])) {
     $_SESSION['cart'][$_GET['id']] = $_GET['qt'];
 }
+
+// 如果商品已存在于购物车中，增加其数量
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $qt = $_GET['qt'];
+    if (isset($_SESSION['cart'][$id])) {
+        $_SESSION['cart'][$id] += $qt;
+    } else {
+        $_SESSION['cart'][$id] = $qt;
+    }
+}
+// 如果未登入則跳至登入頁面
 if (!isset($_SESSION['user'])) {
     to("?do=login");
 }
@@ -59,8 +71,8 @@ if (!isset($_SESSION['user'])) {
                         <td><?= $row['title']; ?></td>
                         <td>NT$<?= $row['price']; ?></td>
                         <td>
-                            <!-- <input type="number" class="quantity form-control" data-id="<?= $id; ?>" max="20" min="1" value="<?= $qt; ?>"> -->
-                            <?= $qt; ?>
+                            <input type="number" class="quantity form-control" data-id="<?= $id; ?>" max="20" min="1" value="<?= $qt; ?>">
+                            <!-- <?= $qt; ?> -->
                         </td>
                         <td class="myTotal">NT$<?= $row['price'] * $qt; ?></td>
                         <td>
