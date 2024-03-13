@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>W.BURGER</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" />
 	<link href="./css/css.css" rel="stylesheet" type="text/css">
 	<script src="./js/js.js"></script>
 	<!-- Bootstrap CSS、JS -->
